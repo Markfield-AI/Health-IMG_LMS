@@ -101,11 +101,11 @@ export default function Training() {
       setCurrentScenarioModule(moduleNumber);
       
       if (!useAI || !sessionId) {
-        return getMockScenarioByModule(moduleNumber);
+        return getMockScenarioByModule(moduleNumber, scenarioCounter);
       }
       
       try {
-        return await generateScenario(moduleNumber, sessionId);
+        return await generateScenario(moduleNumber, sessionId, scenarioCounter);
       } catch (error) {
         console.error("AI generation failed, using mock:", error);
         setUseAI(false);
@@ -113,7 +113,7 @@ export default function Training() {
           title: "Using Practice Scenarios",
           description: "AI generation unavailable. Using pre-built scenarios.",
         });
-        return getMockScenarioByModule(moduleNumber);
+        return getMockScenarioByModule(moduleNumber, scenarioCounter);
       }
     },
     onSuccess: (scenario) => {

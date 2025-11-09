@@ -23,11 +23,11 @@ export async function getSession(sessionId: string): Promise<Session> {
   return response.json();
 }
 
-export async function generateScenario(moduleNumber: number, sessionId: string): Promise<Scenario> {
+export async function generateScenario(moduleNumber: number, sessionId: string, scenarioIndex?: number): Promise<Scenario> {
   const response = await fetch("/api/scenario/generate", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ moduleNumber, sessionId }),
+    body: JSON.stringify({ moduleNumber, sessionId, scenarioIndex }),
   });
   
   if (!response.ok) {

@@ -64,7 +64,25 @@ export const mockScenarios: Scenario[] = [
   }
 ];
 
-export function getMockScenarioByModule(moduleNumber: number): Scenario {
-  const scenario = mockScenarios.find(s => s.moduleNumber === moduleNumber);
-  return scenario || mockScenarios[0];
+export function getMockScenarioByModule(moduleNumber: number, scenarioIndex?: number): Scenario {
+  // Find all scenarios for this module
+  const moduleScenariosAll = mockScenarios.filter(s => s.moduleNumber === moduleNumber);
+  
+  if (moduleScenariosAll.length === 0) {
+    return mockScenarios[0];
+  }
+  
+  // If we have a scenario index, use it to cycle through or pick one
+  // Otherwise just return the first one
+  const index = scenarioIndex !== undefined 
+    ? scenarioIndex % moduleScenariosAll.length 
+    : 0;
+  
+  // Return a copy with a unique key to force re-render
+  const scenario = moduleScenariosAll[index];
+  return {
+    ...scenario,
+    // Add scenario index to make each instance unique
+    scenario_title: `${scenario.scenario_title}${scenarioIndex !== undefined && scenarioIndex > 0 ? ` (Variation ${(scenarioIndex % moduleScenariosAll.length) + 1})` : ''}`
+  };
 }

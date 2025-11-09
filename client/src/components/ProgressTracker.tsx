@@ -6,6 +6,7 @@ interface ProgressTrackerProps {
   totalScenarios: number;
   moduleProgress: {
     module: number;
+    moduleName: string;
     completed: number;
     total: number;
   }[];
@@ -49,9 +50,9 @@ export default function ProgressTracker({ totalCompleted, totalScenarios, module
             <span>Module Breakdown</span>
           </div>
           {moduleProgress.map((module) => (
-            <div key={module.module} className="flex items-center justify-between text-sm">
-              <span className="text-muted-foreground">Module {module.module}</span>
-              <span className="font-medium text-foreground" data-testid={`text-module-${module.module}-progress`}>
+            <div key={module.module} className="flex items-center justify-between text-sm gap-4">
+              <span className="text-muted-foreground flex-1">{module.moduleName}</span>
+              <span className="font-medium text-foreground whitespace-nowrap" data-testid={`text-module-${module.module}-progress`}>
                 {module.completed}/{module.total}
               </span>
             </div>

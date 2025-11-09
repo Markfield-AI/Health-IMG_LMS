@@ -75,6 +75,7 @@ export default function Training() {
     const moduleScenarios = completedScenarios.filter(s => s.moduleNumber === module.number);
     return {
       module: module.number,
+      moduleName: module.title,
       completed: moduleScenarios.length,
       correct: moduleScenarios.filter(s => s.isCorrect).length,
       total: module.total

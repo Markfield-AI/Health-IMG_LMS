@@ -36,7 +36,7 @@ export default function Training() {
   const [lastSubmissionCorrect, setLastSubmissionCorrect] = useState(false);
   const [currentScenarioModule, setCurrentScenarioModule] = useState<number>(1);
 
-  const TOTAL_SCENARIOS = 20;
+  const TOTAL_SCENARIOS = 40;
 
   const isCorrect = selectedAnswer === currentScenario?.correct_answer;
 
@@ -46,28 +46,28 @@ export default function Training() {
       title: "Team Culture",
       description: "Navigate the non-hierarchical, multidisciplinary team environment",
       icon: Users,
-      total: 5
+      total: 10
     },
     {
       number: 2,
       title: "Communication",
       description: "Master the nuances of NHS professional communication",
       icon: MessageSquare,
-      total: 5
+      total: 10
     },
     {
       number: 3,
       title: "Patient Sensitivity",
       description: "Provide culturally sensitive, patient-centered care",
       icon: Heart,
-      total: 5
+      total: 10
     },
     {
       number: 4,
       title: "Professional Integration",
       description: "Understand GMC standards and professional resilience",
       icon: Award,
-      total: 5
+      total: 10
     }
   ];
 
@@ -193,8 +193,9 @@ export default function Training() {
     setScenarioCounter(nextCounter);
     
     // Cycle through all 4 modules to ensure variety in questions
-    // Module rotation: 1 -> 2 -> 3 -> 4 -> 1 -> 2 -> ...
-    const nextModule = ((nextCounter % 4) + 1);
+    // Module rotation: current -> next (1->2, 2->3, 3->4, 4->1)
+    const nextModule = (currentScenarioModule % 4) + 1;
+    setCurrentScenarioModule(nextModule);
     
     scenarioMutation.mutate(nextModule);
   };
@@ -258,7 +259,7 @@ export default function Training() {
 
             <ProgressTracker
               totalCompleted={completedScenarios.length}
-              totalScenarios={20}
+              totalScenarios={TOTAL_SCENARIOS}
               moduleProgress={moduleProgress}
             />
           </div>
@@ -370,7 +371,7 @@ export default function Training() {
             <div className="space-y-6">
               <TrainingAvatar 
                 isSpeaking={true}
-                speechText="Excellent work completing all 20 scenarios! You've demonstrated a solid understanding of NHS cultural competencies across all four modules. Remember, cultural adaptation is an ongoing journey. Continue to apply these principles in your daily practice to provide the best care for your patients and work effectively within your team."
+                speechText="Excellent work completing all 40 scenarios! You've demonstrated a solid understanding of NHS cultural competencies across all four modules. Remember, cultural adaptation is an ongoing journey. Continue to apply these principles in your daily practice to provide the best care for your patients and work effectively within your team."
               />
               
               <div className="bg-card border rounded-lg p-6 space-y-4">
@@ -478,7 +479,7 @@ export default function Training() {
               <div className="mt-6">
                 <ProgressTracker
                   totalCompleted={completedScenarios.length}
-                  totalScenarios={20}
+                  totalScenarios={TOTAL_SCENARIOS}
                   moduleProgress={moduleProgress}
                 />
               </div>

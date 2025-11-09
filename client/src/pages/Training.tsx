@@ -21,6 +21,13 @@ type CompletedScenario = {
   isCorrect: boolean;
 };
 
+type ModuleCounters = {
+  [moduleNumber: number]: number;
+};
+
+const STORAGE_KEY_COMPLETED = 'nhs-training-completed-scenarios';
+const STORAGE_KEY_COUNTERS = 'nhs-training-module-counters';
+
 export default function Training() {
   const { toast } = useToast();
   const [showWelcome, setShowWelcome] = useState(true);
@@ -31,10 +38,9 @@ export default function Training() {
   const [showFeedback, setShowFeedback] = useState(false);
   const [completedScenarios, setCompletedScenarios] = useState<CompletedScenario[]>([]);
   const [selectedModule, setSelectedModule] = useState<number | null>(null);
-  const [scenarioCounter, setScenarioCounter] = useState(0);
+  const [moduleCounters, setModuleCounters] = useState<ModuleCounters>({ 1: 0, 2: 0, 3: 0, 4: 0 });
   const [useAI, setUseAI] = useState(true);
   const [lastSubmissionCorrect, setLastSubmissionCorrect] = useState(false);
-  const [currentScenarioModule, setCurrentScenarioModule] = useState<number>(1);
 
   const TOTAL_SCENARIOS = 40;
 
@@ -84,6 +90,43 @@ export default function Training() {
 
   const totalCorrect = completedScenarios.filter(s => s.isCorrect).length;
 
+  // Restore progress from localStorage on mount
+  useEffect(() => {
+    try {
+      const savedCompleted = localStorage.getItem(STORAGE_KEY_COMPLETED);
+      const savedCounters = localStorage.getItem(STORAGE_KEY_COUNTERS);
+      
+      if (savedCompleted) {
+        const parsed = JSON.parse(savedCompleted);
+        setCompletedScenarios(parsed);
+      }
+      
+      if (savedCounters) {
+        const parsed = JSON.parse(savedCounters);
+        setModuleCounters(parsed);
+      }
+    } catch (error) {
+      console.error("Failed to restore progress:", error);
+    }
+  }, []);
+
+  // Save progress to localStorage whenever it changes
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY_COMPLETED, JSON.stringify(completedScenarios));
+    } catch (error) {
+      console.error("Failed to save completed scenarios:", error);
+    }
+  }, [completedScenarios]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY_COUNTERS, JSON.stringify(moduleCounters));
+    } catch (error) {
+      console.error("Failed to save module counters:", error);
+    }
+  }, [moduleCounters]);
+
   // Create session on mount
   useEffect(() => {
     createSession()
@@ -100,19 +143,19 @@ export default function Training() {
 
   const scenarioMutation = useMutation({
     mutationFn: async (moduleNumber: number) => {
-      setCurrentScenarioModule(moduleNumber);
+      const currentCounter = moduleCounters[moduleNumber] || 0;
       
       if (!sessionId) {
-        return getMockScenarioByModule(moduleNumber, scenarioCounter);
+        return getMockScenarioByModule(moduleNumber, currentCounter);
       }
       
       try {
         // Always try the API first - it returns mock scenarios if OpenAI key is missing
-        const scenario = await generateScenario(moduleNumber, sessionId, scenarioCounter);
+        const scenario = await generateScenario(moduleNumber, sessionId, currentCounter);
         return scenario;
       } catch (error) {
         console.error("API failed, using client-side mock:", error);
-        return getMockScenarioByModule(moduleNumber, scenarioCounter);
+        return getMockScenarioByModule(moduleNumber, currentCounter);
       }
     },
     onSuccess: (scenario) => {
@@ -132,14 +175,15 @@ export default function Training() {
 
   const answerMutation = useMutation({
     mutationFn: async () => {
-      if (!sessionId || !currentScenario) return { isCorrect: false };
+      if (!sessionId || !currentScenario || !selectedModule) return { isCorrect: false };
       
       const isCorrect = selectedAnswer === currentScenario.correct_answer;
+      const currentCounter = moduleCounters[selectedModule] || 0;
       
       try {
         const result = await submitAnswer(
           sessionId,
-          scenarioCounter,
+          currentCounter,
           selectedAnswer,
           currentScenario.correct_answer
         );
@@ -168,48 +212,62 @@ export default function Training() {
   };
 
   const handleNextScenario = () => {
+    if (!selectedModule) return;
+    
+    const currentCounter = moduleCounters[selectedModule] || 0;
+    const scenarioId = `${selectedModule}-${currentCounter}`;
+    
     // Record completion before moving to next scenario
-    const alreadyCompleted = completedScenarios.some(s => s.scenarioId === scenarioCounter);
+    const alreadyCompleted = completedScenarios.some(
+      s => s.scenarioId === currentCounter && s.moduleNumber === selectedModule
+    );
     
     if (!alreadyCompleted) {
       const newCompleted = [
         ...completedScenarios,
         {
-          scenarioId: scenarioCounter,
-          moduleNumber: currentScenarioModule,
+          scenarioId: currentCounter,
+          moduleNumber: selectedModule,
           isCorrect: lastSubmissionCorrect
         }
       ];
       setCompletedScenarios(newCompleted);
       
-      // Check if we've completed all scenarios
+      // Check if we've completed all scenarios across all modules
       if (newCompleted.length >= TOTAL_SCENARIOS) {
         setShowCompletion(true);
         return;
       }
     }
     
-    // Move to next scenario
-    const nextCounter = scenarioCounter + 1;
-    setScenarioCounter(nextCounter);
+    // Increment counter for the current module only (stay on selected module)
+    const nextCounter = currentCounter + 1;
+    setModuleCounters({
+      ...moduleCounters,
+      [selectedModule]: nextCounter
+    });
     
-    // Cycle through all 4 modules to ensure variety in questions
-    // Module rotation: current -> next (1->2, 2->3, 3->4, 4->1)
-    const nextModule = (currentScenarioModule % 4) + 1;
-    setCurrentScenarioModule(nextModule);
-    
-    scenarioMutation.mutate(nextModule);
+    // Generate next scenario from the SAME module
+    scenarioMutation.mutate(selectedModule);
   };
 
   const handleRestartTraining = () => {
     setShowCompletion(false);
     setShowWelcome(true);
     setCompletedScenarios([]);
-    setScenarioCounter(0);
+    setModuleCounters({ 1: 0, 2: 0, 3: 0, 4: 0 });
     setCurrentScenario(null);
     setSelectedAnswer("");
     setShowFeedback(false);
     setSelectedModule(null);
+    
+    // Clear localStorage
+    try {
+      localStorage.removeItem(STORAGE_KEY_COMPLETED);
+      localStorage.removeItem(STORAGE_KEY_COUNTERS);
+    } catch (error) {
+      console.error("Failed to clear progress:", error);
+    }
   };
 
   const handleReturnToMain = () => {
@@ -420,12 +478,14 @@ export default function Training() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <h1 className="text-xl font-bold text-foreground">NHS Cultural Competency Training</h1>
-            <div className="hidden md:block text-sm text-muted-foreground">
-              Scenario {scenarioCounter + 1}
-            </div>
+            {selectedModule && (
+              <div className="hidden md:block text-sm text-muted-foreground">
+                Module {selectedModule} - Scenario {(moduleCounters[selectedModule] || 0) + 1}
+              </div>
+            )}
           </div>
           <div className="text-sm font-medium text-primary">
-            {completedScenarios.length} / 20 Completed
+            {completedScenarios.length} / {TOTAL_SCENARIOS} Completed
           </div>
         </div>
       </header>

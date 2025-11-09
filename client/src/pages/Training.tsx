@@ -14,17 +14,28 @@ import { getMockScenarioByModule } from "@/lib/mockScenarios";
 import { Scenario } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
 
+type CompletedScenario = {
+  scenarioId: number;
+  moduleNumber: number;
+  isCorrect: boolean;
+};
+
 export default function Training() {
   const { toast } = useToast();
   const [showWelcome, setShowWelcome] = useState(true);
+  const [showCompletion, setShowCompletion] = useState(false);
   const [sessionId, setSessionId] = useState<string>("");
   const [currentScenario, setCurrentScenario] = useState<Scenario | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<string>("");
   const [showFeedback, setShowFeedback] = useState(false);
-  const [completedScenarios, setCompletedScenarios] = useState<number[]>([]);
+  const [completedScenarios, setCompletedScenarios] = useState<CompletedScenario[]>([]);
   const [selectedModule, setSelectedModule] = useState<number | null>(null);
   const [scenarioCounter, setScenarioCounter] = useState(0);
   const [useAI, setUseAI] = useState(true);
+  const [lastSubmissionCorrect, setLastSubmissionCorrect] = useState(false);
+  const [currentScenarioModule, setCurrentScenarioModule] = useState<number>(1);
+
+  const TOTAL_SCENARIOS = 20;
 
   const isCorrect = selectedAnswer === currentScenario?.correct_answer;
 
@@ -59,14 +70,17 @@ export default function Training() {
     }
   ];
 
-  const moduleProgress = moduleData.map(module => ({
-    module: module.number,
-    completed: completedScenarios.filter(id => {
-      const moduleNum = Math.ceil(id / 5);
-      return moduleNum === module.number;
-    }).length,
-    total: module.total
-  }));
+  const moduleProgress = moduleData.map(module => {
+    const moduleScenarios = completedScenarios.filter(s => s.moduleNumber === module.number);
+    return {
+      module: module.number,
+      completed: moduleScenarios.length,
+      correct: moduleScenarios.filter(s => s.isCorrect).length,
+      total: module.total
+    };
+  });
+
+  const totalCorrect = completedScenarios.filter(s => s.isCorrect).length;
 
   // Create session on mount
   useEffect(() => {
@@ -84,6 +98,8 @@ export default function Training() {
 
   const scenarioMutation = useMutation({
     mutationFn: async (moduleNumber: number) => {
+      setCurrentScenarioModule(moduleNumber);
+      
       if (!useAI || !sessionId) {
         return getMockScenarioByModule(moduleNumber);
       }
@@ -119,19 +135,23 @@ export default function Training() {
     mutationFn: async () => {
       if (!sessionId || !currentScenario) return { isCorrect: false };
       
+      const isCorrect = selectedAnswer === currentScenario.correct_answer;
+      
       try {
-        return await submitAnswer(
+        const result = await submitAnswer(
           sessionId,
           scenarioCounter,
           selectedAnswer,
           currentScenario.correct_answer
         );
+        return result;
       } catch (error) {
         console.error("Submit failed:", error);
-        return { isCorrect: selectedAnswer === currentScenario.correct_answer };
+        return { isCorrect };
       }
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
+      setLastSubmissionCorrect(data.isCorrect);
       setShowFeedback(true);
     }
   });
@@ -149,18 +169,49 @@ export default function Training() {
   };
 
   const handleNextScenario = () => {
-    if (currentScenario && !completedScenarios.includes(scenarioCounter)) {
-      setCompletedScenarios([...completedScenarios, scenarioCounter]);
+    // Record completion before moving to next scenario
+    const alreadyCompleted = completedScenarios.some(s => s.scenarioId === scenarioCounter);
+    
+    if (!alreadyCompleted) {
+      const newCompleted = [
+        ...completedScenarios,
+        {
+          scenarioId: scenarioCounter,
+          moduleNumber: currentScenarioModule,
+          isCorrect: lastSubmissionCorrect
+        }
+      ];
+      setCompletedScenarios(newCompleted);
+      
+      // Check if we've completed all scenarios
+      if (newCompleted.length >= TOTAL_SCENARIOS) {
+        setShowCompletion(true);
+        return;
+      }
     }
     
-    setScenarioCounter(prev => prev + 1);
+    // Move to next scenario
+    const nextCounter = scenarioCounter + 1;
+    setScenarioCounter(nextCounter);
     
-    // Cycle through modules or stay on selected module
+    // Determine next module: if user selected a specific module, stay in it
+    // Otherwise, cycle through all 4 modules
     const nextModule = selectedModule 
       ? selectedModule 
-      : ((scenarioCounter % 4) + 1);
+      : ((nextCounter % 4) + 1);
     
     scenarioMutation.mutate(nextModule);
+  };
+
+  const handleRestartTraining = () => {
+    setShowCompletion(false);
+    setShowWelcome(true);
+    setCompletedScenarios([]);
+    setScenarioCounter(0);
+    setCurrentScenario(null);
+    setSelectedAnswer("");
+    setShowFeedback(false);
+    setSelectedModule(null);
   };
 
   if (showWelcome) {
@@ -227,6 +278,119 @@ export default function Training() {
                   onClick={() => handleModuleSelect(module.number)}
                 />
               ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (showCompletion) {
+    const percentage = Math.round((totalCorrect / TOTAL_SCENARIOS) * 100);
+    
+    return (
+      <div className="min-h-screen bg-background">
+        <div className="relative h-96 overflow-hidden">
+          <img 
+            src={heroImage} 
+            alt="NHS Medical Team"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 flex items-center justify-center">
+            <div className="text-center text-white px-6 max-w-3xl">
+              <h1 className="text-5xl font-bold mb-4">
+                Training Complete!
+              </h1>
+              <p className="text-xl mb-8">
+                Congratulations on completing the NHS Cultural Competency Training
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="space-y-6">
+              <div className="bg-card border rounded-lg p-8 text-center space-y-6">
+                <div className="text-6xl font-bold text-primary" data-testid="text-completion-score">
+                  {percentage}%
+                </div>
+                <div className="text-2xl font-semibold text-foreground">
+                  {totalCorrect} correct out of {TOTAL_SCENARIOS} scenarios
+                </div>
+                <div className="text-lg text-muted-foreground">
+                  {completedScenarios.length} scenarios attempted
+                </div>
+                <p className="text-muted-foreground">
+                  You've successfully navigated through all four modules of cultural competency training. You're now better prepared to work effectively within the NHS environment.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold text-foreground">Module Summary</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {moduleData.map((module, index) => {
+                    const progress = moduleProgress[index];
+                    const accuracy = progress.completed > 0 
+                      ? Math.round((progress.correct / progress.completed) * 100) 
+                      : 0;
+                    
+                    return (
+                      <div key={module.number} className="bg-card border rounded-lg p-4">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <module.icon className="w-5 h-5 text-primary" />
+                          <h4 className="font-semibold text-foreground">{module.title}</h4>
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          {progress.completed} scenarios completed
+                        </div>
+                        {progress.completed > 0 && (
+                          <div className="text-sm font-medium text-primary">
+                            {accuracy}% accuracy ({progress.correct}/{progress.completed})
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <button
+                onClick={handleRestartTraining}
+                className="w-full bg-primary text-primary-foreground hover-elevate active-elevate-2 rounded-md py-3 px-6 font-semibold text-lg"
+                data-testid="button-restart-training"
+              >
+                Start New Training Session
+              </button>
+            </div>
+
+            <div className="space-y-6">
+              <TrainingAvatar 
+                isSpeaking={true}
+                speechText="Excellent work completing all 20 scenarios! You've demonstrated a solid understanding of NHS cultural competencies across all four modules. Remember, cultural adaptation is an ongoing journey. Continue to apply these principles in your daily practice to provide the best care for your patients and work effectively within your team."
+              />
+              
+              <div className="bg-card border rounded-lg p-6 space-y-4">
+                <h3 className="text-xl font-semibold text-foreground">Next Steps</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start space-x-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Review the GMC's "Good Medical Practice" guidelines</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Familiarize yourself with your trust's local policies</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Seek feedback from colleagues and supervisors</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Attend further cultural competency workshops</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

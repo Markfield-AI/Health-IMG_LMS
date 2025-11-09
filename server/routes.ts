@@ -5,9 +5,22 @@ import { scenarioSchema } from "@shared/schema";
 import OpenAI from "openai";
 import { TRAINING_SYSTEM_PROMPT } from "./training-content";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Lazy initialize OpenAI only when needed and API key is available
+let openai: OpenAI | null = null;
+
+function getOpenAIClient(): OpenAI {
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error("OPENAI_API_KEY is not configured");
+  }
+  
+  if (!openai) {
+    openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+  
+  return openai;
+}
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Create a new training session
@@ -56,7 +69,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const userPrompt = `Generate a realistic, challenging scenario for ${moduleNames[moduleNumber as keyof typeof moduleNames]}. Make it engaging and test core competencies. Return only the JSON object, no other text.`;
 
-      const completion = await openai.chat.completions.create({
+      const client = getOpenAIClient();
+      const completion = await client.chat.completions.create({
         model: "gpt-4o",
         messages: [
           { role: "system", content: TRAINING_SYSTEM_PROMPT },

@@ -43,28 +43,28 @@ export default function Training() {
   const moduleData = [
     {
       number: 1,
-      title: "Team Culture",
+      title: "Navigating the Non-Hierarchical, Multidisciplinary Team Culture",
       description: "Navigate the non-hierarchical, multidisciplinary team environment",
       icon: Users,
       total: 10
     },
     {
       number: 2,
-      title: "Communication",
+      title: "Mastering the Nuances of Communication",
       description: "Master the nuances of NHS professional communication",
       icon: MessageSquare,
       total: 10
     },
     {
       number: 3,
-      title: "Patient Sensitivity",
+      title: "Patient-Facing Cultural Sensitivity and Ethical Practice",
       description: "Provide culturally sensitive, patient-centered care",
       icon: Heart,
       total: 10
     },
     {
       number: 4,
-      title: "Professional Integration",
+      title: "Professional Integration: Regulation, Conduct, and Organizational Culture",
       description: "Understand GMC standards and professional resilience",
       icon: Award,
       total: 10

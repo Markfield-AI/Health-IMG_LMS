@@ -6,7 +6,7 @@ import { Scenario } from "@shared/schema";
 export const mockScenarios: Scenario[] = [
   // MODULE 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture (Scenarios 1-10)
   {
-    module: "Module 1: Team Culture",
+    module: "Module 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture",
     moduleNumber: 1,
     scenario_title: "The Challenging Nurse",
     scenario_text: "You are a new Foundation Doctor (FY1) on the ward. You prescribe a standard dose of a diuretic for a patient with fluid overload. The senior ward nurse, who has 20 years of experience, approaches you and says, \"I wonder if we should consider half that dose, Doctor, given his borderline blood pressure.\" In your home country, a nurse would never question a doctor's order.",
@@ -21,7 +21,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! This response perfectly demonstrates NHS MDT culture.\n\n**GMC Good Medical Practice 2024 - Domain 3 (Colleagues, Culture and Safety)** requires doctors to \"work collaboratively with colleagues while respecting their roles and contributions\" and \"engage with colleagues in a manner that prioritises patient welfare.\"\n\nBy acknowledging the nurse's expertise and reviewing guidelines together, you demonstrate professional parity and collaborative decision-making. Senior nurses have invaluable clinical experience, particularly regarding patient safety concerns.\n\n**NHS Constitution** emphasizes that \"patient safety, experience and outcomes are all improved when staff are valued, empowered and supported.\"\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3: Colleagues, Culture and Safety; NHS Constitution Principle 3"
   },
   {
-    module: "Module 1: Team Culture",
+    module: "Module 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture",
     moduleNumber: 1,
     scenario_title: "The Administrative Gatekeeper",
     scenario_text: "You need an urgent, non-routine blood test processed for a patient. You approach the ward clerk, who is busy with discharge paperwork, and instruct her to drop everything and process your request immediately. She replies, \"I'm sorry, Doctor, but I have three discharges that need to be completed before 10 am, or the beds won't be free. Is this test life-threatening?\"",
@@ -36,7 +36,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! This demonstrates respect for the clerk's role and understanding that discharge processes are clinically important.\n\n**GMC Good Medical Practice 2024 - Domain 3** states you must \"treat all colleagues with kindness, courtesy and respect\" and \"work collaboratively with colleagues (nurses, allied health professionals, administrative staff) while respecting their roles and contributions.\"\n\nBy explaining urgency and asking about proper processes, you show collaborative problem-solving while maintaining professional relationships. Discharge coordination is essential for patient flow and safety.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3: Colleagues, Culture and Safety"
   },
   {
-    module: "Module 1: Team Culture",
+    module: "Module 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture",
     moduleNumber: 1,
     scenario_title: "The Pharmacist's Intervention",
     scenario_text: "During the ward round, you propose a new antibiotic regimen. The ward pharmacist, who is part of the round, politely interjects, \"Doctor, I've checked the patient's renal function, and the dose you suggested is outside the local trust's safety guidelines. I recommend we use the lower dose.\"",
@@ -51,7 +51,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! The pharmacist is fulfilling their professional role as part of the MDT safety net.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires doctors to \"work collaboratively with colleagues while respecting their roles and contributions.\" Pharmacists are medication experts and their clinical input is expected and valued in NHS culture.\n\n**NHS Patient Safety** frameworks recognize that multidisciplinary input prevents medication errors and improves outcomes. This collaborative approach exemplifies the safety net principle where multiple professionals protect patient welfare.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3; National Patient Safety Agency (NPSA) Medication Safety Guidelines"
   },
   {
-    module: "Module 1: Team Culture",
+    module: "Module 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture",
     moduleNumber: 1,
     scenario_title: "The Junior Doctor's Silence",
     scenario_text: "You are a Registrar leading a teaching session. You notice a junior doctor (FY1) from a conservative background is consistently silent, even when directly asked for their opinion on a complex case. Later, they tell you privately they are afraid to speak up in front of senior staff.",
@@ -66,7 +66,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! Speaking up is not just encouraged in the NHS—it's a professional duty.\n\n**NHS Constitution** guarantees staff \"the right to raise concerns about safety, malpractice or other risks in the public interest\" and pledges to \"encourage and support staff in raising concerns at the earliest opportunity.\"\n\n**Freedom to Speak Up** (established 2016 following Mid Staffordshire inquiry) emphasizes that speaking up should be \"routine business in well-led NHS organizations.\" The flat hierarchy model means patient safety concerns can be raised by anyone, regardless of seniority.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires creating cultures where staff can \"ask questions, talk about errors, and raise concerns safely.\"\n\n**Reference:** NHS Constitution; Freedom to Speak Up Framework (2016); GMC Good Medical Practice 2024, Domain 3"
   },
   {
-    module: "Module 1: Team Culture",
+    module: "Module 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture",
     moduleNumber: 1,
     scenario_title: "The Team Coffee Break",
     scenario_text: "Your colleagues invite you to join them for a 15-minute coffee break. You feel that as a doctor, you should prioritize reviewing notes and that socializing with non-medical staff is unprofessional.",
@@ -81,7 +81,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! Team breaks are vital for building trust and rapport that underpin effective MDT communication.\n\n**GMC Good Medical Practice 2024 - Domain 3** emphasizes helping create cultures that are \"respectful, fair, supportive, and compassionate\" and building effective working relationships through \"knowledge sharing through informal and formal channels.\"\n\nResearch shows that when critical situations arise, team members with strong relationships communicate more openly and effectively, directly improving patient safety and clinical outcomes.\n\n**NHS Leadership Academy** recognizes that informal team building is essential for psychological safety and effective collaboration.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3: Colleagues, Culture and Safety; NHS Leadership Academy - Building Team Effectiveness"
   },
   {
-    module: "Module 1: Team Culture",
+    module: "Module 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture",
     moduleNumber: 1,
     scenario_title: "Delegation to the Nurse",
     scenario_text: "You need a patient to be cannulated immediately for IV access. You are busy reviewing a critical patient. You ask the ward nurse to perform the cannulation. She replies, \"I'm sorry, Doctor, but I'm currently administering time-critical medication to three patients. Could you ask the other nurse, or is this something you could do?\"",
@@ -96,7 +96,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! This demonstrates understanding that all team members have important clinical priorities.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires you to \"adapt leadership roles as necessary—lead or follow as circumstances require\" and recognize that effective teamwork means understanding colleagues' responsibilities.\n\nBy recognizing her time-critical task (medication administration) and finding alternative solutions, you show professional respect and flexibility while ensuring patient care. Time-critical medications must not be interrupted.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3: Colleagues, Culture and Safety; NMC Standards for Medicine Management"
   },
   {
-    module: "Module 1: Team Culture",
+    module: "Module 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture",
     moduleNumber: 1,
     scenario_title: "The Consultant's Open Door",
     scenario_text: "Your Consultant tells you, \"My door is always open if you have any concerns, no matter how small.\" You are used to a system where you only approach the most senior doctor with major, pre-vetted issues.",
@@ -111,7 +111,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! This is a genuine invitation reflecting NHS culture of early escalation and open communication.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires doctors to be \"accessible to colleagues seeking information, advice, or support when on duty\" and to help create cultures where staff can \"ask questions and raise concerns safely.\"\n\n**NHS Patient Safety Framework** emphasizes early escalation prevents problems from deteriorating. Consultants expect and value this communication as part of creating psychologically safe learning environments.\n\n**National Guardian's Office** promotes that speaking up should be \"routine business in well-led NHS organizations.\"\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3; NHS Patient Safety Framework; Freedom to Speak Up"
   },
   {
-    module: "Module 1: Team Culture",
+    module: "Module 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture",
     moduleNumber: 1,
     scenario_title: "The Unfamiliar Terminology",
     scenario_text: "During a handover, a colleague uses a local NHS acronym you have never heard before (e.g., \"TTO,\" \"DNACPR,\" or \"EDD\"). You don't want to appear ignorant in front of the team.",
@@ -126,7 +126,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! This balances clarification needs with respect for handover processes.\n\n**GMC Good Medical Practice 2024 - Domain 1 (Knowledge, Skills and Performance)** states you must \"recognise and work within the limits of your competence\" and \"be honest about your knowledge and experience.\"\n\nAsking discreetly shows professional humility and commitment to patient safety. Never pretend to understand medical information—patient safety always comes first.\n\n**NHS Communication Standards** emphasize that effective handovers require shared understanding of all clinical information.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 1: Knowledge, Skills and Performance; NHS England Safe Handover Guidance"
   },
   {
-    module: "Module 1: Team Culture",
+    module: "Module 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture",
     moduleNumber: 1,
     scenario_title: "The Role of the Physiotherapist",
     scenario_text: "A patient who had a stroke is medically stable, but the Physiotherapist insists the patient cannot be discharged yet because they are not safe to mobilize at home, despite the doctor's assessment that the patient is medically fit.",
@@ -141,7 +141,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! Discharge decisions in the NHS require MDT consensus.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires collaborative working and recognizing that \"work collaboratively with colleagues while respecting their roles and contributions.\"\n\nWhile doctors assess medical fitness, physiotherapists are experts in functional safety. A patient who is medically fit but functionally unsafe is not ready for discharge. This holistic approach ensures patient safety and reduces readmissions.\n\n**NICE Discharge Planning Guidance** emphasizes MDT assessment for safe discharge.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3; NICE Clinical Guideline NG27 - Transition Between Inpatient Hospital Settings and Community or Care Home Settings"
   },
   {
-    module: "Module 1: Team Culture",
+    module: "Module 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture",
     moduleNumber: 1,
     scenario_title: "Feedback on Teamwork",
     scenario_text: "Your Educational Supervisor gives you feedback that you are \"too autocratic\" and need to \"delegate more effectively\" to the nursing staff. You feel you are simply being efficient.",
@@ -158,7 +158,7 @@ export const mockScenarios: Scenario[] = [
   
   // MODULE 2: Mastering the Nuances of Communication (Scenarios 11-20)
   {
-    module: "Module 2: Communication",
+    module: "Module 2: Mastering the Nuances of Communication",
     moduleNumber: 2,
     scenario_title: "Decoding the Soft Directive",
     scenario_text: "You receive an email from your Consultant regarding a patient's discharge summary. The email reads: \"I wonder if you could possibly have a look at the discharge summary for Mrs. Jones before you leave? No rush, of course.\"",
@@ -173,7 +173,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! In NHS culture, 'I wonder if you could...' and 'no rush' are polite softeners that maintain collegial tone, but the expectation is clear: complete this today.\n\n**GMC Good Medical Practice 2024 - Domain 2 (Patients, Partnership and Communication)** requires you to \"communicate clearly and work effectively with colleagues.\"\n\nUnderstanding these indirect British communication styles is crucial for professional success. The politeness maintains flat hierarchy while conveying clear expectations. Discharge summaries are medico-legally important documents.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2: Patients, Partnership and Communication; Domain 3: Colleagues, Culture and Safety"
   },
   {
-    module: "Module 2: Communication",
+    module: "Module 2: Mastering the Nuances of Communication",
     moduleNumber: 2,
     scenario_title: "The SBAR Escalation",
     scenario_text: "You are calling the on-call Registrar about a patient whose condition is deteriorating. You are from a system where you would simply state your findings and ask for a plan.",
@@ -188,7 +188,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! **SBAR** is the NHS gold standard for clinical escalation.\n\n**NHS England Patient Safety** mandates SBAR for structured communication: **S**ituation (what's happening now), **B**ackground (relevant clinical history), **A**ssessment (your clinical findings/interpretation), **R**ecommendation (what you think should be done).\n\nSBAR reduces communication errors that contribute to adverse events. Originally developed by the US military, it's been widely adopted across NHS trusts to improve patient safety, particularly for phone communications and handovers.\n\n**NHS Implementation Guide** provides training toolkits for SBAR.\n\n**Reference:** NHS England SBAR Communication Tool; NHS Patient Safety Framework; systematic review (2018) showing moderate evidence for improved patient safety"
   },
   {
-    module: "Module 2: Communication",
+    module: "Module 2: Mastering the Nuances of Communication",
     moduleNumber: 2,
     scenario_title: "Patient-Centered Language",
     scenario_text: "You are explaining a diagnosis of \"Myocardial Infarction\" to a patient's family. You notice they look confused.",
@@ -203,7 +203,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! Using plain English and the 'teach-back' method ensures effective communication.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"give information patients can understand—provide information in a way patients want or need, in understandable language.\"\n\n**The Teach-Back Method** (endorsed by AHRQ and NHS) involves asking patients to repeat information in their own words. Studies show 50% of patients leave medical visits without understanding what physicians told them, and 40-80% of information is immediately forgotten.\n\n**NHS Accessible Information Standard** mandates communication in accessible formats.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; Agency for Healthcare Research and Quality (AHRQ) Health Literacy Toolkit; NHS Accessible Information Standard"
   },
   {
-    module: "Module 2: Communication",
+    module: "Module 2: Mastering the Nuances of Communication",
     moduleNumber: 2,
     scenario_title: "Assertiveness Rehearsal",
     scenario_text: "You are trying to get a critical blood result from the lab technician, who is being dismissive. You need to be assertive without being aggressive.",
@@ -218,7 +218,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! This demonstrates clear, professional assertiveness.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires \"communicate clearly\" while treating colleagues with \"kindness, courtesy and respect.\"\n\nYou state: what you need, when you need it, why it's urgent, and the clinical context. This approach is firm but respectful, focusing on patient safety rather than personal authority. It provides the lab technician with essential clinical context to prioritize appropriately.\n\n**NHS Communication Standards** emphasize assertive communication that balances respect with clarity.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2 and Domain 3; NHS Leadership Academy - Assertive Communication Skills"
   },
   {
-    module: "Module 2: Communication",
+    module: "Module 2: Mastering the Nuances of Communication",
     moduleNumber: 2,
     scenario_title: "Decoding With Respect",
     scenario_text: "You propose a management plan in an MDT meeting. A senior colleague begins their response by saying, \"With respect, Doctor, I think we should consider the alternative pathway...\"",
@@ -233,7 +233,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! \"With respect\" is a polite British phrase that typically precedes a disagreement or challenge.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires understanding effective communication patterns and recognizing that \"communicate clearly and work effectively with colleagues.\"\n\nUnderstanding these linguistic nuances helps you respond appropriately and maintain professional relationships when your ideas are being questioned. This indirect communication style maintains collegiality while allowing robust clinical discussion.\n\n**NHS Communication Culture** values respectful challenge as part of effective MDT functioning.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2: Patients, Partnership and Communication; Domain 3: Colleagues, Culture and Safety"
   },
   {
-    module: "Module 2: Communication",
+    module: "Module 2: Mastering the Nuances of Communication",
     moduleNumber: 2,
     scenario_title: "The Unclear Instruction",
     scenario_text: "A Consultant tells you over the phone, \"Just keep an eye on Mrs. Davies and let me know if you're not entirely happy with her.\"",
@@ -248,7 +248,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! This demonstrates professional assertiveness and clarity-seeking.\n\n**GMC Good Medical Practice 2024 - Domain 1** requires you to \"be honest about your knowledge and experience\" and \"ask for help when you need it.\"\n\nVague instructions like 'keep an eye on' or 'not entirely happy' can lead to missed deterioration or unnecessary escalations. Asking for specific parameters (e.g., vital signs thresholds) ensures patient safety and appropriate escalation.\n\n**NHS Patient Safety** emphasizes clear communication prevents adverse events.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 1: Knowledge, Skills and Performance; Domain 2: Patients, Partnership and Communication; National Patient Safety Agency (NPSA) Safe Handover Guidelines"
   },
   {
-    module: "Module 2: Communication",
+    module: "Module 2: Mastering the Nuances of Communication",
     moduleNumber: 2,
     scenario_title: "The Patient's Jargon",
     scenario_text: "A patient uses a lot of medical jargon they found online to describe their symptoms, but you suspect they don't fully understand the terms.",
@@ -263,7 +263,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! This approach gently clarifies understanding without embarrassing the patient.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"listen to patients\" and \"recognize their knowledge and experience of their health.\" You must also \"give information patients can understand.\"\n\nThis ensures you're both discussing the same symptoms and helps identify misconceptions from online research that may affect the consultation. The teach-back approach frames it as checking shared understanding rather than testing the patient.\n\n**NHS Shared Decision Making** emphasizes collaborative clarification.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2: Patients, Partnership and Communication; AHRQ Health Literacy Toolkit"
   },
   {
-    module: "Module 2: Communication",
+    module: "Module 2: Mastering the Nuances of Communication",
     moduleNumber: 2,
     scenario_title: "The Email Urgency",
     scenario_text: "You need to contact a colleague about a patient who needs a non-urgent but important review. You are unsure if you should call or email.",
@@ -278,7 +278,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! Professional emails create documented trails essential for clinical governance and medico-legal protection.\n\n**GMC Good Medical Practice 2024 - Domain 1** requires you to \"keep clear, accurate, and legible records\" and Domain 3 requires \"share all relevant information with colleagues involved in patients' care.\"\n\nFor non-urgent matters requiring detail, email allows the colleague to review and respond when appropriate, while maintaining a clear record of the communication. This supports continuity of care and professional accountability.\n\n**NHS Clinical Governance** emphasizes documented communication.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 1: Knowledge, Skills and Performance; Domain 3: Colleagues, Culture and Safety; NHS Records Management Code of Practice"
   },
   {
-    module: "Module 2: Communication",
+    module: "Module 2: Mastering the Nuances of Communication",
     moduleNumber: 2,
     scenario_title: "The Teach-Back Method",
     scenario_text: "You have just explained a new medication regimen to an elderly patient.",
@@ -293,7 +293,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! The **Teach-Back Method** is the gold standard for confirming understanding.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"support shared decision-making\" and \"give information patients can understand.\"\n\n**AHRQ (Agency for Healthcare Research and Quality)** evidence shows teach-back: improves disease knowledge and medication adherence, increases patient satisfaction, decreases hospital readmissions, and improves health outcomes. Only 12% of adults have proficient health literacy.\n\nBy framing it as checking YOUR explanation rather than testing the patient, you avoid embarrassment while ensuring true understanding, reducing medication errors.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; AHRQ Health Literacy Universal Precautions Toolkit; systematic reviews showing teach-back effectiveness"
   },
   {
-    module: "Module 2: Communication",
+    module: "Module 2: Mastering the Nuances of Communication",
     moduleNumber: 2,
     scenario_title: "The Overly Direct Communication",
     scenario_text: "You are used to a communication style where you would tell a junior colleague, \"You made a mistake on the drug chart. Fix it now.\"",
@@ -310,7 +310,7 @@ export const mockScenarios: Scenario[] = [
 
   // MODULE 3: Patient-Facing Cultural Sensitivity and Ethical Practice (Scenarios 21-30)
   {
-    module: "Module 3: Patient Sensitivity",
+    module: "Module 3: Patient-Facing Cultural Sensitivity and Ethical Practice",
     moduleNumber: 3,
     scenario_title: "Gillick Competence and Contraception",
     scenario_text: "A 14-year-old girl attends your clinic requesting contraception. She explicitly states that she does not want her parents to know. You are from a country where parental consent is mandatory for minors.",
@@ -325,7 +325,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! This is the correct application of **Gillick Competence** and UK law.\n\n**Gillick v West Norfolk (1985)** established that children under 16 can consent to medical treatment if they have \"sufficient maturity and understanding.\" **Fraser Guidelines** (from the same case) apply specifically to contraception and sexual health.\n\n**GMC 0-18 Years: Guidance for Doctors** states you can provide contraception if the young person: (1) understands the advice, (2) cannot be persuaded to inform parents, (3) is very likely to continue having sexual intercourse, (4) their physical or mental health will suffer without treatment, and (5) it's in their best interests.\n\nYour duty is to the patient, not the family. Under-16s should be encouraged to inform parents, but if they meet Gillick competence and Fraser criteria, confidentiality must be maintained.\n\n**Reference:** Gillick v West Norfolk (1985); GMC 0-18 Years: Guidance for All Doctors; Fraser Guidelines; NSPCC Gillick Competence Guidance"
   },
   {
-    module: "Module 3: Patient Sensitivity",
+    module: "Module 3: Patient-Facing Cultural Sensitivity and Ethical Practice",
     moduleNumber: 3,
     scenario_title: "Gender Identity and Pronouns",
     scenario_text: "You are reviewing a patient's notes and see they have a male name on their birth certificate but are referred to by the nursing staff as \"Ms. Sarah\" and use \"she/her\" pronouns. You accidentally use a male pronoun during the consultation.",
@@ -340,7 +340,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! Immediately apologize briefly, correct yourself, and move forward.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"treat patients with kindness, courtesy and respect\" and \"respect patients' dignity and privacy.\"\n\n**Equality Act 2010** protects against discrimination based on gender reassignment. Using incorrect pronouns can cause significant distress and demonstrates lack of respect for patient identity.\n\nA brief, sincere apology acknowledges the error without making the patient responsible for educating you. Dwelling on the mistake or over-apologizing can make the patient more uncomfortable.\n\n**NHS Rainbow Badge Initiative** promotes inclusive care for LGBTQ+ patients.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; Equality Act 2010; GMC Trans Healthcare Guidance; NHS Rainbow Badge Standards"
   },
   {
-    module: "Module 3: Patient Sensitivity",
+    module: "Module 3: Patient-Facing Cultural Sensitivity and Ethical Practice",
     moduleNumber: 3,
     scenario_title: "Capacity and Cultural Pressure",
     scenario_text: "A 70-year-old woman from a traditional background requires a potentially life-saving blood transfusion. Her adult son insists she would refuse it for religious reasons. The patient is conscious but appears passive and defers all questions to her son.",
@@ -355,7 +355,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! You must assess the patient's capacity directly.\n\n**Mental Capacity Act 2005** presumes adults have capacity unless proven otherwise. You must:\n1. Assess capacity for this specific decision\n2. Provide information in accessible formats\n3. Take all reasonable steps to help her make a decision\n4. Respect HER autonomous decision, not the family's wishes\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"respect patients' right to reach their own decisions\" and \"not discriminate unfairly against patients.\"\n\nFamily members cannot make decisions for capacitous adults. If she has capacity and refuses, you must respect that. If she lacks capacity, the decision must be made in her best interests (which may include family views but not family control).\n\n**Reference:** Mental Capacity Act 2005; GMC Decision Making and Consent Guidance; GMC Good Medical Practice 2024, Domain 2"
   },
   {
-    module: "Module 3: Patient Sensitivity",
+    module: "Module 3: Patient-Facing Cultural Sensitivity and Ethical Practice",
     moduleNumber: 3,
     scenario_title: "Religious Accommodation",
     scenario_text: "A Muslim patient asks if their consultation can be delayed by 10 minutes so they can complete their afternoon prayer. The clinic is running 30 minutes behind schedule.",
@@ -370,7 +370,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! Offer choice and respect their decision.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"treat patients with kindness, courtesy and respect\" and \"respect patients' dignity and privacy.\"\n\n**Equality Act 2010** requires reasonable adjustments for religious practice. **NHS Constitution** emphasizes respect for \"human rights, privacy and dignity.\"\n\nOffering the choice acknowledges their needs while being transparent about clinic constraints. A 10-minute delay may be manageable; if not, seeing them next in the queue is a reasonable accommodation. The key is respecting their autonomy to choose.\n\n**NHS Chaplaincy Guidelines** support facilitating religious practice where reasonable.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; Equality Act 2010; NHS Constitution; NHS Chaplaincy and Spiritual Care Guidelines"
   },
   {
-    module: "Module 3: Patient Sensitivity",
+    module: "Module 3: Patient-Facing Cultural Sensitivity and Ethical Practice",
     moduleNumber: 3,
     scenario_title: "Cultural Beliefs About Diagnosis",
     scenario_text: "You diagnose a patient with Type 2 Diabetes. The patient's family insists the illness is caused by \"evil eye\" and want to consult a traditional healer before starting medication. The patient's HbA1c is 75 mmol/mol (9%).",
@@ -385,7 +385,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! This demonstrates cultural competence while ensuring patient safety.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"respect patients' dignity and privacy\" and \"support shared decision-making\" while also ensuring you \"provide effective treatments based on the best available evidence.\"\n\n**NHS Constitution** values \"respect and dignity\" and recognizes patients' rights to be \"involved in discussions and decisions about their healthcare.\"\n\nAcknowledging cultural beliefs doesn't mean abandoning evidence-based medicine. Working alongside traditional practices (where safe) while arranging close monitoring demonstrates respect and maintains therapeutic relationship. HbA1c of 75 requires treatment but isn't immediately life-threatening, allowing time for negotiation.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; NHS Constitution; NICE Type 2 Diabetes Guideline NG28"
   },
   {
-    module: "Module 3: Patient Sensitivity",
+    module: "Module 3: Patient-Facing Cultural Sensitivity and Ethical Practice",
     moduleNumber: 3,
     scenario_title: "Interpreter Services",
     scenario_text: "A patient who speaks limited English attends with her 10-year-old daughter, who offers to interpret. The consultation concerns potential cervical cancer and requires discussion of intimate symptoms.",
@@ -400,7 +400,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! You must arrange a professional interpreter for sensitive consultations.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"give information patients can understand\" and \"communicate sensitively.\"\n\n**NHS Accessible Information Standard** mandates provision of professional interpreters. Using children as interpreters is inappropriate because:\n1. It reverses family roles and can be psychologically harmful\n2. Children may lack medical vocabulary\n3. Patients may withhold sensitive information\n4. Accuracy cannot be assured\n5. Safeguarding concerns may be missed\n6. Consent validity is compromised\n\n**Language Line** and video interpreting services are available 24/7 for NHS consultations.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; NHS Accessible Information Standard; Royal College of General Practitioners - Professional Interpreters Guidance"
   },
   {
-    module: "Module 3: Patient Sensitivity",
+    module: "Module 3: Patient-Facing Cultural Sensitivity and Ethical Practice",
     moduleNumber: 3,
     scenario_title: "End of Life Cultural Practices",
     scenario_text: "A terminally ill patient's family from a Hindu background requests that the patient's bed be moved to face east and that they be allowed to play religious music and perform rituals around the bedside. The patient is unconscious.",
@@ -415,7 +415,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! Facilitate cultural practices where practically possible.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"treat patients with kindness, courtesy and respect\" and \"respect patients' dignity and privacy.\"\n\n**NHS Constitution** guarantees \"respect for human rights, privacy and dignity\" and \"patients will be treated with dignity and respect, in accordance with their human rights.\"\n\nEnd-of-life care should accommodate cultural and religious practices where feasible. Repositioning a bed and allowing quiet music are reasonable adjustments. If practices conflict with other patients' wellbeing, creative solutions (e.g., side room, designated times) should be explored.\n\n**Leadership Alliance for the Care of Dying People** emphasizes individual preferences in end-of-life care.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; NHS Constitution; Leadership Alliance for the Care of Dying People - Five Priorities of Care"
   },
   {
-    module: "Module 3: Patient Sensitivity",
+    module: "Module 3: Patient-Facing Cultural Sensitivity and Ethical Practice",
     moduleNumber: 3,
     scenario_title: "Female Genital Mutilation Disclosure",
     scenario_text: "During a postnatal check, you notice signs consistent with Female Genital Mutilation (FGM) Type 3 on a 25-year-old woman. She becomes distressed when you mention it and begs you not to involve authorities, stating it was done in her home country when she was a child.",
@@ -430,7 +430,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! This is the proper application of UK FGM legislation and reporting requirements.\n\n**FGM Act 2003 (amended 2015)** makes FGM illegal in the UK, even if performed abroad. **Mandatory Reporting Duty** (since October 2015) requires healthcare professionals to report to police when they discover FGM in girls under 18.\n\nFor adult survivors:\n1. Complete **FGM Enhanced Dataset** (mandatory recording in NHS)\n2. Offer specialist support and referral\n3. Assess safeguarding risk to any daughters/girls in household\n4. Only report to police if you believe a girl under 18 is at risk\n\n**GMC Protecting Children and Young People** requires you to protect children from harm while respecting adult patients' confidentiality where no child protection concerns exist.\n\n**Reference:** FGM Act 2003; Serious Crime Act 2015; GMC Protecting Children and Young People; NHS FGM Enhanced Dataset; Home Office Multi-Agency Statutory Guidance on FGM"
   },
   {
-    module: "Module 3: Patient Sensitivity",
+    module: "Module 3: Patient-Facing Cultural Sensitivity and Ethical Practice",
     moduleNumber: 3,
     scenario_title: "Chaperone for Intimate Examination",
     scenario_text: "You need to perform an intimate examination on a patient. The patient is from a culture where opposite-gender healthcare providers are uncommon. They appear uncomfortable but haven't explicitly refused.",
@@ -445,7 +445,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Excellent! Offer choice, explain rights, and respect preferences.\n\n**GMC Intimate Examinations and Chaperones Guidance** requires you to:\n1. Explain why examination is necessary\n2. Obtain informed consent\n3. Offer a chaperone (and document if declined)\n4. Recognize that patients have the right to decline or request a same-gender clinician\n\n**GMC Good Medical Practice 2024 - Domain 2** requires \"respect patients' dignity and privacy\" and \"support shared decision-making.\"\n\nNon-verbal discomfort is important. Silence ≠ consent. Offering alternatives shows cultural sensitivity while maintaining professional standards. For non-urgent examinations, arranging a same-gender clinician is reasonable.\n\n**Reference:** GMC Intimate Examinations and Chaperones (2013); GMC Good Medical Practice 2024, Domain 2; GMC Decision Making and Consent"
   },
   {
-    module: "Module 3: Patient Sensitivity",
+    module: "Module 3: Patient-Facing Cultural Sensitivity and Ethical Practice",
     moduleNumber: 3,
     scenario_title: "Advance Decision to Refuse Treatment",
     scenario_text: "A Jehovah's Witness patient is admitted unconscious following a car accident with severe hemorrhage. You find a valid Advance Decision to Refuse Treatment (ADRT) card in their wallet refusing blood transfusions under all circumstances, even if life-threatening.",
@@ -462,7 +462,7 @@ export const mockScenarios: Scenario[] = [
 
   // MODULE 4: Professional Integration: Regulation, Conduct, and Organizational Culture (Scenarios 31-40)
   {
-    module: "Module 4: Professional Integration",
+    module: "Module 4: Professional Integration: Regulation, Conduct, and Organizational Culture",
     moduleNumber: 4,
     scenario_title: "Social Media Confidentiality",
     scenario_text: "During lunch, you take a photo of an interesting X-ray to share in a private WhatsApp group of medical students for educational purposes. You crop the image to remove the patient's name, but you mention the patient's age and which ward they are on.",
@@ -477,7 +477,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! This is a clear breach of confidentiality.\n\n**GMC Social Media Guidance** states:\n1. You must not disclose identifiable patient information via social media\n2. **Private groups are NOT secure** - information can be shared beyond the group\n3. Although individual details may not breach confidentiality alone, **the sum of information** (age + ward + clinical image) could identify the patient\n4. Professional standards apply online just as they do offline\n\n**GMC Confidentiality Guidance** requires explicit patient consent before using information for educational purposes.\n\n**GMC Good Medical Practice 2024 - Domain 4 (Safety and Quality)** requires you to \"protect information about patients and colleagues.\"\n\nSerious or persistent failure to follow GMC guidance puts your registration at risk. Additionally, breaches could lead to civil claims or ICO complaints.\n\n**Reference:** GMC Using Social Media as a Medical Professional; GMC Confidentiality: Good Practice in Handling Patient Information; GMC Good Medical Practice 2024, Domain 4; Information Commissioner's Office (ICO) Guidance"
   },
   {
-    module: "Module 4: Professional Integration",
+    module: "Module 4: Professional Integration: Regulation, Conduct, and Organizational Culture",
     moduleNumber: 4,
     scenario_title: "Duty of Candour",
     scenario_text: "You accidentally prescribe 10 times the correct dose of a medication due to a decimal point error. The error is caught by the pharmacist before the medication is administered. No harm came to the patient.",
@@ -492,7 +492,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! You must be open and honest with the patient.\n\n**GMC Good Medical Practice 2024 - Domain 4** requires you to \"be open and honest when things go wrong\" and states:\n1. You must inform patients promptly about anything that has gone wrong\n2. You must apologize\n3. You must explain the short and long-term effects\n4. You must tell patients about their right to seek further information\n\n**Professional Duty of Candour** (Health and Social Care Act 2008, Regulation 20) is a legal requirement for NHS organizations. **GMC Openness and Honesty When Things Go Wrong** applies to individual doctors.\n\nBeing open about errors—even near misses—maintains trust, allows patients to monitor for late effects, and demonstrates professional integrity. Apologizing does NOT constitute legal admission of liability.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 4; GMC Openness and Honesty When Things Go Wrong; Health and Social Care Act 2008 (Regulated Activities) Regulations 2014, Regulation 20"
   },
   {
-    module: "Module 4: Professional Integration",
+    module: "Module 4: Professional Integration: Regulation, Conduct, and Organizational Culture",
     moduleNumber: 4,
     scenario_title: "Raising Concerns About a Colleague",
     scenario_text: "You notice a colleague has alcohol on their breath during an afternoon shift. They appear to be functioning normally, but you are concerned.",
@@ -507,7 +507,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! You must raise this concern promptly through appropriate channels.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires you to:\n1. \"Be compassionate towards colleagues who have problems with their performance or health\"\n2. **BUT** \"must put patient safety first at all times\"\n3. \"You must raise a concern if you have reason to believe that patient safety may be compromised by a colleague's conduct, health or performance\"\n\n**GMC Raising and Acting on Concerns About Patient Safety** provides clear guidance:\n- You have a professional duty to act, not wait for patient harm\n- Raise concerns through local procedures (clinical supervisor, medical director, Freedom to Speak Up Guardian)\n- The colleague may need occupational health support, not punishment\n\n**NHS Freedom to Speak Up** protects those who raise concerns.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3; GMC Raising and Acting on Concerns About Patient Safety; NHS Freedom to Speak Up Framework; Public Interest Disclosure Act 1998"
   },
   {
-    module: "Module 4: Professional Integration",
+    module: "Module 4: Professional Integration: Regulation, Conduct, and Organizational Culture",
     moduleNumber: 4,
     scenario_title: "Maintaining Professional Boundaries",
     scenario_text: "A patient you treated in the emergency department sends you a friend request on Facebook. You provided excellent care, and the patient has now been discharged with no ongoing care relationship.",
@@ -522,7 +522,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! You should decline or ignore the friend request.\n\n**GMC Maintaining Professional Boundaries** (formerly Maintaining a Professional Boundary Between You and Your Patient) states:\n- You must not use your professional position to pursue a sexual or improper emotional relationship\n- **Social media blurs boundaries** between professional and personal life\n- Ending a professional relationship does not automatically make a personal relationship appropriate\n\n**GMC Social Media Guidance** states:\n- It is not appropriate to accept friend requests from patients\n- If contacted about care via private social media, direct them to appropriate professional channels\n- You cannot mix social and professional relationships\n\n**GMC Good Medical Practice 2024 - Domain 3** requires maintaining professional relationships that protect patient trust.\n\n**Reference:** GMC Maintaining Professional Boundaries with Patients; GMC Using Social Media as a Medical Professional; GMC Good Medical Practice 2024, Domain 3"
   },
   {
-    module: "Module 4: Professional Integration",
+    module: "Module 4: Professional Integration: Regulation, Conduct, and Organizational Culture",
     moduleNumber: 4,
     scenario_title: "Consent for Medical Students",
     scenario_text: "You are supervising a medical student on a ward round. A patient agrees to be examined \"by the doctor.\" The medical student begins the examination without explicitly identifying themselves as a student.",
@@ -537,7 +537,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! You must ensure the patient understands who is involved in their care.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to:\n1. \"Be honest and trustworthy in all communication with patients\"\n2. Ensure patients understand \"who is providing their care\"\n3. Obtain proper informed consent for any examination or procedure\n\n**GMC Consent Guidance** states patients must be informed about:\n- The roles of those providing care\n- The involvement of students or trainees\n- Their right to decline student involvement without affecting their care\n\nAs the supervising doctor, you share responsibility for ensuring proper consent. Deception (even by omission) breaches professional standards and undermines trust. Most patients are happy to help students learn when asked honestly.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; GMC Decision Making and Consent; GMC Responsibilities of Doctors in Management and Leadership Roles"
   },
   {
-    module: "Module 4: Professional Integration",
+    module: "Module 4: Professional Integration: Regulation, Conduct, and Organizational Culture",
     moduleNumber: 4,
     scenario_title: "Fitness to Practise and Health Issues",
     scenario_text: "You have been experiencing symptoms of depression for several months, affecting your concentration and sleep. You are managing to complete your work, but you are increasingly exhausted and making minor mistakes.",
@@ -552,7 +552,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! You must seek appropriate support when health issues affect your work.\n\n**GMC Good Medical Practice 2024 - Domain 4** requires you to:\n1. \"Be registered with a general practitioner (GP) outside your family\"\n2. \"Consult a suitably qualified colleague for advice and treatment if you are concerned about your own health\"\n3. \"Do not self-prescribe\"\n4. **\"You must protect patients from any risk posed by your health\"**\n\nDepression is common in doctors (~12% prevalence). Seeking help early prevents deterioration and protects patients. **NHS Practitioner Health Programme** provides confidential mental health support for doctors.\n\n**GMC Doctors' Health Guidance** emphasizes:\n- Your health matters - both for you and your patients\n- Early intervention prevents serious problems\n- Workplace adjustments or brief leave often help\n- Self-treatment is inadequate and unprofessional\n\n**Reference:** GMC Good Medical Practice 2024, Domain 4; GMC Doctors' Health; NHS Practitioner Health Programme; BMA Doctors' Wellbeing Resources"
   },
   {
-    module: "Module 4: Professional Integration",
+    module: "Module 4: Professional Integration: Regulation, Conduct, and Organizational Culture",
     moduleNumber: 4,
     scenario_title: "Probity in Professional Practice",
     scenario_text: "You are asked to complete a cremation form (Part 5) for a patient who died under the care of your consultant. You were not directly involved in the patient's care and have only briefly reviewed the notes.",
@@ -567,7 +567,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! You must decline if you cannot complete the form honestly.\n\n**GMC Good Medical Practice 2024 - Domain 4** requires you to:\n1. **\"Be honest and trustworthy when writing reports, and when completing or signing forms, reports and other documents\"**\n2. \"You must make sure that any documents you write or sign are not false or misleading\"\n3. \"You must take reasonable steps to verify the information\"\n\n**GMC Probity Guidance** states:\n- You must not sign documents you have not completed yourself or cannot verify\n- Patients and the public must be able to trust doctors to be honest\n\n**Cremation Form 5** requires the certifying doctor to have personally cared for or examined the deceased. Falsifying this is a criminal offense under the Cremation (England and Wales) Regulations 2008 and could result in GMC sanctions.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 4; GMC Probity: Honesty in Professional Practice; Cremation (England and Wales) Regulations 2008"
   },
   {
-    module: "Module 4: Professional Integration",
+    module: "Module 4: Professional Integration: Regulation, Conduct, and Organizational Culture",
     moduleNumber: 4,
     scenario_title: "Informed Financial Consent",
     scenario_text: "A patient asks you to complete a private sick note for their employer. You plan to charge £25 for this service. The patient assumes it will be free as part of NHS care.",
@@ -582,7 +582,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! You must inform patients about charges before providing the service.\n\n**GMC Good Medical Practice 2024 - Domain 4** requires you to:\n1. **\"Be honest in financial matters\"**\n2. \"Make sure patients are informed about costs they may have to pay\"\n3. \"Get their agreement before providing treatment or services for which they will be charged\"\n\n**GMC Financial and Commercial Arrangements and Conflicts of Interest** states:\n- Patients must know about charges in advance\n- They must have opportunity to decline\n- Charges must be reasonable and justifiable\n- Financial interests must not influence clinical judgment\n\nEven for private services, GMC standards apply. Surprising patients with unexpected bills damages trust and breaches professional standards.\n\n**BMA Fees Guidance** provides recommended charges for private medical services.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 4; GMC Financial and Commercial Arrangements and Conflicts of Interest; BMA Private Practice Fees"
   },
   {
-    module: "Module 4: Professional Integration",
+    module: "Module 4: Professional Integration: Regulation, Conduct, and Organizational Culture",
     moduleNumber: 4,
     scenario_title: "Research Consent and Vulnerability",
     scenario_text: "You are recruiting patients for a clinical trial. A patient with learning disabilities and mild intellectual impairment expresses interest in participating. Their care home manager is eager for them to participate.",
@@ -597,7 +597,7 @@ export const mockScenarios: Scenario[] = [
     rationale: "Correct! You must assess capacity specifically for research consent and ensure voluntary participation.\n\n**GMC Good Medical Practice 2024 - Domain 4** requires you to \"obtain informed consent from patients before undertaking research\" and \"follow the guidance in our research guidance.\"\n\n**GMC Good Practice in Research** states:\n1. Participants must have capacity to consent OR appropriate legal authority must be obtained\n2. Information must be provided in accessible formats\n3. Consent must be voluntary - free from coercion or undue influence\n4. Learning disabilities ≠ lack of capacity - many people with learning disabilities CAN consent\n\n**Mental Capacity Act 2005** requires capacity assessment for specific decisions. Care home managers do NOT have automatic legal authority over residents.\n\n**Research Ethics Committees** require special consideration for potentially vulnerable participants.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 4; GMC Good Practice in Research; Mental Capacity Act 2005; Health Research Authority - Consent and Participant Information Guidance"
   },
   {
-    module: "Module 4: Professional Integration",
+    module: "Module 4: Professional Integration: Regulation, Conduct, and Organizational Culture",
     moduleNumber: 4,
     scenario_title: "Learning from Incidents",
     scenario_text: "You are involved in a clinical incident where a patient experienced a delayed diagnosis due to a communication breakdown between teams. No serious harm occurred. Your colleague suggests \"Let's just move on and not dwell on it.\"",

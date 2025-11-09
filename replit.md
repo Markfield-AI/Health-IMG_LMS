@@ -2,7 +2,7 @@
 
 ## Overview
 
-An interactive web-based training platform designed for International Medical Graduates (IMGs) transitioning to the NHS. The application delivers scenario-based cultural competency training through a talking avatar interface, covering team dynamics, communication styles, patient sensitivity, and professional integration. Users engage with realistic clinical scenarios, answer multiple-choice questions, and receive immediate educational feedback.
+An interactive web-based training platform designed for International Medical Graduates (IMGs) transitioning to the NHS. The application delivers scenario-based cultural competency training through a talking avatar interface across four comprehensive modules: (1) Navigating the Non-Hierarchical, Multidisciplinary Team Culture, (2) Mastering the Nuances of Communication, (3) Patient-Facing Cultural Sensitivity and Ethical Practice, and (4) Professional Integration: Regulation, Conduct, and Organizational Culture. Users engage with realistic clinical scenarios, answer multiple-choice questions, and receive immediate educational feedback with GMC Good Medical Practice 2024 and NHS authoritative source references.
 
 ## User Preferences
 

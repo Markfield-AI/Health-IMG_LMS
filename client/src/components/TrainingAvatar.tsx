@@ -50,8 +50,8 @@ export default function TrainingAvatar({ isSpeaking = false, speechText, onSpeec
       }
       
       utterance.lang = 'en-GB'; // UK English
-      utterance.rate = 0.9;
-      utterance.pitch = 1.0;
+      utterance.rate = 1.2;
+      utterance.pitch = 1.1; // Slightly higher pitch for more natural female voice
       utterance.onend = () => {
         setCurrentlySpeaking(false);
         onSpeechComplete?.();

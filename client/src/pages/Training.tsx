@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { queryClient } from "@/lib/queryClient";
 import TrainingAvatar from "@/components/TrainingAvatar";
 import ScenarioCard from "@/components/ScenarioCard";
 import QuestionOptions from "@/components/QuestionOptions";
@@ -7,69 +9,24 @@ import ModuleCard from "@/components/ModuleCard";
 import ProgressTracker from "@/components/ProgressTracker";
 import { Users, MessageSquare, Heart, Award } from "lucide-react";
 import heroImage from "@assets/generated_images/NHS_teamwork_hero_image_97cc3a1b.png";
-
-// Mock scenario data - will be replaced with AI-generated content
-const mockScenarios = [
-  {
-    id: 1,
-    module: "Module 1: Team Culture",
-    moduleNumber: 1,
-    title: "The Challenging Nurse",
-    scenarioText: "You are a new IMG registrar on a busy medical ward. During your ward round, you prescribe 1L of normal saline at 125ml/hr for a post-operative patient. Sarah, a senior nurse with 15 years of experience, approaches you and says: 'I wonder if we should consider a lower rate, given his cardiac history and age. His last echo showed an ejection fraction of 35%.'\n\nIn your home country, a nurse would never question a doctor's prescription, and you feel somewhat undermined in front of the team.",
-    question: "What is the most appropriate professional response that reflects NHS MDT culture?",
-    options: {
-      A: "Politely but firmly tell Sarah that you are the doctor and you will make the clinical decisions.",
-      B: "Ignore Sarah's comment and continue with the ward round to avoid confrontation.",
-      C: "Acknowledge Sarah's concern, thank her for the input, and review the patient's notes and fluid guidelines together.",
-      D: "Change the prescription immediately to avoid any conflict with nursing staff."
-    },
-    correctAnswer: "C",
-    rationale: "Excellent! This response perfectly demonstrates the NHS MDT culture. By acknowledging Sarah's expertise and reviewing the guidelines together, you show professional parity and collaborative decision-making. In the NHS, a senior nurse's clinical input is invaluable, especially regarding patient safety concerns. This approach strengthens team relationships while ensuring the best patient outcome. Options A and B reflect hierarchical thinking, while D shows lack of clinical confidence."
-  },
-  {
-    id: 2,
-    module: "Module 2: Communication",
-    moduleNumber: 2,
-    title: "Decoding the Consultant",
-    scenarioText: "You receive an email from your consultant at 4:45 PM on Friday: 'I wonder if you could possibly have a look at the discharge summary for Mrs. Jones before you leave? No rush, of course. Just when you get a chance.'\n\nYou have plans to meet friends at 5:30 PM and the discharge summary will take at least 45 minutes to complete properly.",
-    question: "How should you interpret this communication and respond?",
-    options: {
-      A: "The consultant said 'no rush', so complete it on Monday morning when you're fresh.",
-      B: "This is a polite but firm instruction to complete it today before leaving, as it's clinically important.",
-      C: "Send a quick reply saying you'll do it 'when you get a chance' to match the tone.",
-      D: "Complete half of it today and finish the rest on Monday."
-    },
-    correctAnswer: "B",
-    rationale: "Correct! In NHS professional culture, 'I wonder if you could...' and 'no rush' are polite softeners, but the expectation is clear: complete this task today. The consultant is being courteous while making a professional request. Discharge summaries are time-sensitive for patient safety and continuity of care. You should complete it before leaving, even if it means adjusting your personal plans. Options A, C, and D show misunderstanding of indirect NHS communication."
-  },
-  {
-    id: 3,
-    module: "Module 3: Patient Sensitivity",
-    moduleNumber: 3,
-    title: "Gillick Competence",
-    scenarioText: "A 15-year-old girl attends your GP surgery alone, requesting contraception. She appears mature and articulate. She explicitly states: 'Please don't tell my parents. They would be really upset if they knew I was sexually active.'\n\nYou come from a culture where discussing such matters with minors without parental consent would be unthinkable.",
-    question: "What is the appropriate course of action according to UK law and GMC guidance?",
-    options: {
-      A: "Refuse to discuss contraception without parental consent, as she is under 16.",
-      B: "Assess her understanding and maturity (Gillick Competence). If she demonstrates sufficient understanding, provide contraception and maintain confidentiality.",
-      C: "Agree to help her, but insist on informing her parents as a condition of providing treatment.",
-      D: "Provide the contraception but document that you advised her to tell her parents."
-    },
-    correctAnswer: "B",
-    rationale: "Excellent! This is the correct application of Gillick Competence and UK law. If the 15-year-old demonstrates sufficient maturity and understanding of the proposed treatment, she can legally consent without parental knowledge. Your duty is to the patient, not the family. You must assess her understanding, provide unbiased advice, and maintain absolute confidentiality unless there are safeguarding concerns. Options A and C violate her autonomy, while D is partially correct but doesn't emphasize the critical assessment of competence."
-  }
-];
+import { createSession, generateScenario, submitAnswer } from "@/lib/api";
+import { getMockScenarioByModule } from "@/lib/mockScenarios";
+import { Scenario } from "@shared/schema";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Training() {
+  const { toast } = useToast();
   const [showWelcome, setShowWelcome] = useState(true);
-  const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0);
+  const [sessionId, setSessionId] = useState<string>("");
+  const [currentScenario, setCurrentScenario] = useState<Scenario | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<string>("");
   const [showFeedback, setShowFeedback] = useState(false);
   const [completedScenarios, setCompletedScenarios] = useState<number[]>([]);
   const [selectedModule, setSelectedModule] = useState<number | null>(null);
+  const [scenarioCounter, setScenarioCounter] = useState(0);
+  const [useAI, setUseAI] = useState(true);
 
-  const currentScenario = mockScenarios[currentScenarioIndex];
-  const isCorrect = selectedAnswer === currentScenario.correctAnswer;
+  const isCorrect = selectedAnswer === currentScenario?.correct_answer;
 
   const moduleData = [
     {
@@ -105,38 +62,105 @@ export default function Training() {
   const moduleProgress = moduleData.map(module => ({
     module: module.number,
     completed: completedScenarios.filter(id => {
-      const scenario = mockScenarios.find(s => s.id === id);
-      return scenario?.moduleNumber === module.number;
+      const moduleNum = Math.ceil(id / 5);
+      return moduleNum === module.number;
     }).length,
     total: module.total
   }));
 
+  // Create session on mount
+  useEffect(() => {
+    createSession()
+      .then(session => setSessionId(session.sessionId))
+      .catch(err => {
+        console.error("Failed to create session:", err);
+        toast({
+          title: "Session Error",
+          description: "Using offline mode. AI scenarios unavailable.",
+          variant: "destructive"
+        });
+      });
+  }, [toast]);
+
+  const scenarioMutation = useMutation({
+    mutationFn: async (moduleNumber: number) => {
+      if (!useAI || !sessionId) {
+        return getMockScenarioByModule(moduleNumber);
+      }
+      
+      try {
+        return await generateScenario(moduleNumber, sessionId);
+      } catch (error) {
+        console.error("AI generation failed, using mock:", error);
+        setUseAI(false);
+        toast({
+          title: "Using Practice Scenarios",
+          description: "AI generation unavailable. Using pre-built scenarios.",
+        });
+        return getMockScenarioByModule(moduleNumber);
+      }
+    },
+    onSuccess: (scenario) => {
+      setCurrentScenario(scenario);
+      setSelectedAnswer("");
+      setShowFeedback(false);
+    },
+    onError: (error) => {
+      console.error("Failed to load scenario:", error);
+      toast({
+        title: "Error",
+        description: "Failed to load scenario. Please try again.",
+        variant: "destructive"
+      });
+    }
+  });
+
+  const answerMutation = useMutation({
+    mutationFn: async () => {
+      if (!sessionId || !currentScenario) return { isCorrect: false };
+      
+      try {
+        return await submitAnswer(
+          sessionId,
+          scenarioCounter,
+          selectedAnswer,
+          currentScenario.correct_answer
+        );
+      } catch (error) {
+        console.error("Submit failed:", error);
+        return { isCorrect: selectedAnswer === currentScenario.correct_answer };
+      }
+    },
+    onSuccess: () => {
+      setShowFeedback(true);
+    }
+  });
+
+  const handleModuleSelect = (moduleNumber: number) => {
+    setSelectedModule(moduleNumber);
+    scenarioMutation.mutate(moduleNumber);
+    setShowWelcome(false);
+  };
+
   const handleSubmitAnswer = () => {
     if (selectedAnswer) {
-      setShowFeedback(true);
+      answerMutation.mutate();
     }
   };
 
   const handleNextScenario = () => {
-    if (!completedScenarios.includes(currentScenario.id)) {
-      setCompletedScenarios([...completedScenarios, currentScenario.id]);
+    if (currentScenario && !completedScenarios.includes(scenarioCounter)) {
+      setCompletedScenarios([...completedScenarios, scenarioCounter]);
     }
     
-    const nextIndex = (currentScenarioIndex + 1) % mockScenarios.length;
-    setCurrentScenarioIndex(nextIndex);
-    setSelectedAnswer("");
-    setShowFeedback(false);
-  };
-
-  const handleModuleSelect = (moduleNumber: number) => {
-    setSelectedModule(moduleNumber);
-    const scenarioInModule = mockScenarios.find(s => s.moduleNumber === moduleNumber);
-    if (scenarioInModule) {
-      setCurrentScenarioIndex(mockScenarios.indexOf(scenarioInModule));
-      setSelectedAnswer("");
-      setShowFeedback(false);
-      setShowWelcome(false);
-    }
+    setScenarioCounter(prev => prev + 1);
+    
+    // Cycle through modules or stay on selected module
+    const nextModule = selectedModule 
+      ? selectedModule 
+      : ((scenarioCounter % 4) + 1);
+    
+    scenarioMutation.mutate(nextModule);
   };
 
   if (showWelcome) {
@@ -210,6 +234,17 @@ export default function Training() {
     );
   }
 
+  if (!currentScenario || scenarioMutation.isPending) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center space-y-4">
+          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="text-lg text-muted-foreground">Loading scenario...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b bg-card sticky top-0 z-10">
@@ -217,7 +252,7 @@ export default function Training() {
           <div className="flex items-center space-x-4">
             <h1 className="text-xl font-bold text-foreground">NHS Cultural Competency Training</h1>
             <div className="hidden md:block text-sm text-muted-foreground">
-              Scenario {currentScenarioIndex + 1} of {mockScenarios.length}
+              Scenario {scenarioCounter + 1}
             </div>
           </div>
           <div className="text-sm font-medium text-primary">
@@ -231,8 +266,8 @@ export default function Training() {
           <div className="lg:col-span-2 space-y-6">
             <ScenarioCard
               module={currentScenario.module}
-              title={currentScenario.title}
-              scenarioText={currentScenario.scenarioText}
+              title={currentScenario.scenario_title}
+              scenarioText={currentScenario.scenario_text}
               question={currentScenario.question}
             />
 
@@ -248,7 +283,7 @@ export default function Training() {
               <QuestionOptions
                 options={currentScenario.options}
                 selectedAnswer={selectedAnswer}
-                correctAnswer={showFeedback ? currentScenario.correctAnswer : undefined}
+                correctAnswer={showFeedback ? currentScenario.correct_answer : undefined}
                 onSelectAnswer={setSelectedAnswer}
                 showFeedback={showFeedback}
               />
@@ -256,10 +291,11 @@ export default function Training() {
               {!showFeedback && selectedAnswer && (
                 <button
                   onClick={handleSubmitAnswer}
-                  className="w-full mt-6 bg-primary text-primary-foreground hover-elevate active-elevate-2 rounded-md py-3 px-6 font-semibold text-lg"
+                  disabled={answerMutation.isPending}
+                  className="w-full mt-6 bg-primary text-primary-foreground hover-elevate active-elevate-2 rounded-md py-3 px-6 font-semibold text-lg disabled:opacity-50"
                   data-testid="button-submit-answer"
                 >
-                  Submit Answer
+                  {answerMutation.isPending ? "Submitting..." : "Submit Answer"}
                 </button>
               )}
             </div>
@@ -269,7 +305,7 @@ export default function Training() {
             <div className="sticky top-24">
               <TrainingAvatar 
                 isSpeaking={!showFeedback}
-                speechText={currentScenario.scenarioText}
+                speechText={currentScenario.scenario_text}
               />
               
               <div className="mt-6">

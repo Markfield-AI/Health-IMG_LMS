@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
+import { Button } from "@/components/ui/button";
 import TrainingAvatar from "@/components/TrainingAvatar";
 import ScenarioCard from "@/components/ScenarioCard";
 import QuestionOptions from "@/components/QuestionOptions";
@@ -207,6 +208,13 @@ export default function Training() {
     setSelectedAnswer("");
     setShowFeedback(false);
     setSelectedModule(null);
+  };
+
+  const handleReturnToMain = () => {
+    setShowWelcome(true);
+    setCurrentScenario(null);
+    setSelectedAnswer("");
+    setShowFeedback(false);
   };
 
   if (showWelcome) {
@@ -474,6 +482,15 @@ export default function Training() {
                   moduleProgress={moduleProgress}
                 />
               </div>
+
+              <Button
+                onClick={handleReturnToMain}
+                variant="secondary"
+                className="w-full mt-4"
+                data-testid="button-return-to-main"
+              >
+                Back to Main Menu
+              </Button>
             </div>
           </div>
         </div>

@@ -100,19 +100,16 @@ export default function Training() {
     mutationFn: async (moduleNumber: number) => {
       setCurrentScenarioModule(moduleNumber);
       
-      if (!useAI || !sessionId) {
+      if (!sessionId) {
         return getMockScenarioByModule(moduleNumber, scenarioCounter);
       }
       
       try {
-        return await generateScenario(moduleNumber, sessionId, scenarioCounter);
+        // Always try the API first - it returns mock scenarios if OpenAI key is missing
+        const scenario = await generateScenario(moduleNumber, sessionId, scenarioCounter);
+        return scenario;
       } catch (error) {
-        console.error("AI generation failed, using mock:", error);
-        setUseAI(false);
-        toast({
-          title: "Using Practice Scenarios",
-          description: "AI generation unavailable. Using pre-built scenarios.",
-        });
+        console.error("API failed, using client-side mock:", error);
         return getMockScenarioByModule(moduleNumber, scenarioCounter);
       }
     },

@@ -191,11 +191,9 @@ export default function Training() {
     const nextCounter = scenarioCounter + 1;
     setScenarioCounter(nextCounter);
     
-    // Determine next module: if user selected a specific module, stay in it
-    // Otherwise, cycle through all 4 modules
-    const nextModule = selectedModule 
-      ? selectedModule 
-      : ((nextCounter % 4) + 1);
+    // Cycle through all 4 modules to ensure variety in questions
+    // Module rotation: 1 -> 2 -> 3 -> 4 -> 1 -> 2 -> ...
+    const nextModule = ((nextCounter % 4) + 1);
     
     scenarioMutation.mutate(nextModule);
   };

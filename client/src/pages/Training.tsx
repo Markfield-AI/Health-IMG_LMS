@@ -288,9 +288,12 @@ export default function Training() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 flex items-center justify-center">
             <div className="text-center text-white px-6 max-w-3xl">
-              <h1 className="text-5xl font-bold mb-4">
+              <h1 className="text-5xl font-bold mb-2">
                 REFORM
               </h1>
+              <p className="text-2xl font-semibold mb-6 text-primary-foreground/90">
+                Reform to Perform
+              </p>
               <p className="text-xl mb-8">
                 Interactive scenario-based cultural competency training for International Medical Graduates
               </p>

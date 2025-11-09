@@ -47,10 +47,18 @@ export default function ModuleCard({
         </div>
         
         <div className="flex-1 min-w-0">
-          <div className="flex items-center space-x-2 mb-2">
+          <div className="flex items-center mb-2 flex-wrap gap-2">
             <Badge variant="outline" className="text-xs">
               Module {number}
             </Badge>
+            {isCompleted && (
+              <Badge 
+                className="bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-300 border-green-200 dark:border-green-800"
+                data-testid={`badge-completed-${number}`}
+              >
+                {title} - Completed
+              </Badge>
+            )}
             <span className="text-sm text-muted-foreground">
               {completed}/{total} scenarios
             </span>

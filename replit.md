@@ -23,9 +23,12 @@ Preferred communication style: Simple, everyday language.
 **Routing**: Wouter for lightweight client-side routing. Currently single-page application with potential for expansion.
 
 **Key Features**:
-- Interactive avatar with optional text-to-speech using Web Speech API
-- Progress tracking across four training modules
+- Interactive avatar with optional text-to-speech using Web Speech API (UK female voice, 1.2x speed, natural pitch)
+- Progress tracking across four training modules with completion badges
+- Module completion badges displaying module name when all scenarios are completed
+- Back to Main Menu navigation from active scenarios
 - Real-time scenario generation and answer validation
+- Automatic module rotation to ensure question variety
 - Fallback to mock scenarios when AI service unavailable
 
 ### Backend Architecture

@@ -289,10 +289,10 @@ export default function Training() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 flex items-center justify-center">
             <div className="text-center text-white px-6 max-w-3xl">
               <h1 className="text-5xl font-bold mb-4">
-                NHS Cultural Competency Training
+                REFORM
               </h1>
               <p className="text-xl mb-8">
-                Interactive scenario-based learning for International Medical Graduates
+                Interactive scenario-based cultural competency training for International Medical Graduates
               </p>
             </div>
           </div>
@@ -312,7 +312,7 @@ export default function Training() {
               
               <TrainingAvatar 
                 isSpeaking={true}
-                speechText="Hello! I'm your NHS training instructor. I'll guide you through interactive scenarios covering team culture, communication, patient sensitivity, and professional integration. Let's begin your journey to becoming a confident NHS practitioner."
+                speechText="Hello! I'm your REFORM training instructor. I'll guide you through interactive scenarios covering team culture, communication, patient sensitivity, and professional integration. Let's begin your journey to becoming a confident NHS practitioner."
               />
             </div>
 
@@ -477,7 +477,7 @@ export default function Training() {
       <header className="border-b bg-card sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <h1 className="text-xl font-bold text-foreground">NHS Cultural Competency Training</h1>
+            <h1 className="text-xl font-bold text-foreground">REFORM</h1>
             {selectedModule && (
               <div className="hidden md:block text-sm text-muted-foreground">
                 Module {selectedModule} - Scenario {(moduleCounters[selectedModule] || 0) + 1}

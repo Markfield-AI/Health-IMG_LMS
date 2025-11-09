@@ -110,22 +110,16 @@ export default function Training() {
     }
   }, []);
 
-  // Save progress to localStorage whenever it changes
+  // Save progress to localStorage - only when completedScenarios changes
+  // This ensures atomic updates and prevents stale data
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY_COMPLETED, JSON.stringify(completedScenarios));
-    } catch (error) {
-      console.error("Failed to save completed scenarios:", error);
-    }
-  }, [completedScenarios]);
-
-  useEffect(() => {
-    try {
       localStorage.setItem(STORAGE_KEY_COUNTERS, JSON.stringify(moduleCounters));
     } catch (error) {
-      console.error("Failed to save module counters:", error);
+      console.error("Failed to save progress:", error);
     }
-  }, [moduleCounters]);
+  }, [completedScenarios, moduleCounters]);
 
   // Create session on mount
   useEffect(() => {
@@ -142,20 +136,18 @@ export default function Training() {
   }, [toast]);
 
   const scenarioMutation = useMutation({
-    mutationFn: async (moduleNumber: number) => {
-      const currentCounter = moduleCounters[moduleNumber] || 0;
-      
+    mutationFn: async ({ moduleNumber, counter }: { moduleNumber: number; counter: number }) => {
       if (!sessionId) {
-        return getMockScenarioByModule(moduleNumber, currentCounter);
+        return getMockScenarioByModule(moduleNumber, counter);
       }
       
       try {
         // Always try the API first - it returns mock scenarios if OpenAI key is missing
-        const scenario = await generateScenario(moduleNumber, sessionId, currentCounter);
+        const scenario = await generateScenario(moduleNumber, sessionId, counter);
         return scenario;
       } catch (error) {
         console.error("API failed, using client-side mock:", error);
-        return getMockScenarioByModule(moduleNumber, currentCounter);
+        return getMockScenarioByModule(moduleNumber, counter);
       }
     },
     onSuccess: (scenario) => {
@@ -201,7 +193,8 @@ export default function Training() {
 
   const handleModuleSelect = (moduleNumber: number) => {
     setSelectedModule(moduleNumber);
-    scenarioMutation.mutate(moduleNumber);
+    const currentCounter = moduleCounters[moduleNumber] || 0;
+    scenarioMutation.mutate({ moduleNumber, counter: currentCounter });
     setShowWelcome(false);
   };
 
@@ -215,12 +208,14 @@ export default function Training() {
     if (!selectedModule) return;
     
     const currentCounter = moduleCounters[selectedModule] || 0;
-    const scenarioId = `${selectedModule}-${currentCounter}`;
     
-    // Record completion before moving to next scenario
+    // Record completion - prevent duplicates by checking both counter and module
     const alreadyCompleted = completedScenarios.some(
       s => s.scenarioId === currentCounter && s.moduleNumber === selectedModule
     );
+    
+    // Calculate next counter value
+    const nextCounter = currentCounter + 1;
     
     if (!alreadyCompleted) {
       const newCompleted = [
@@ -231,24 +226,29 @@ export default function Training() {
           isCorrect: lastSubmissionCorrect
         }
       ];
+      
+      // Update both state values atomically using functional updates
       setCompletedScenarios(newCompleted);
+      setModuleCounters(prev => ({
+        ...prev,
+        [selectedModule]: nextCounter
+      }));
       
       // Check if we've completed all scenarios across all modules
       if (newCompleted.length >= TOTAL_SCENARIOS) {
         setShowCompletion(true);
         return;
       }
+    } else {
+      // If already completed, still increment counter to move forward
+      setModuleCounters(prev => ({
+        ...prev,
+        [selectedModule]: nextCounter
+      }));
     }
     
-    // Increment counter for the current module only (stay on selected module)
-    const nextCounter = currentCounter + 1;
-    setModuleCounters({
-      ...moduleCounters,
-      [selectedModule]: nextCounter
-    });
-    
-    // Generate next scenario from the SAME module
-    scenarioMutation.mutate(selectedModule);
+    // Generate next scenario from the SAME module with the NEW counter
+    scenarioMutation.mutate({ moduleNumber: selectedModule, counter: nextCounter });
   };
 
   const handleRestartTraining = () => {

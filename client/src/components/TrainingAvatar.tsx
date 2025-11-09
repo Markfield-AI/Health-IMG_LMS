@@ -12,11 +12,44 @@ interface TrainingAvatarProps {
 export default function TrainingAvatar({ isSpeaking = false, speechText, onSpeechComplete }: TrainingAvatarProps) {
   const [isTTSEnabled, setIsTTSEnabled] = useState(true);
   const [currentlySpeaking, setCurrentlySpeaking] = useState(false);
+  const [ukFemaleVoice, setUkFemaleVoice] = useState<SpeechSynthesisVoice | null>(null);
+
+  // Load and select UK female voice
+  useEffect(() => {
+    if ('speechSynthesis' in window) {
+      const loadVoices = () => {
+        const voices = window.speechSynthesis.getVoices();
+        
+        // Try to find a UK female voice
+        // Priority: Google UK English Female > any en-GB female > any en-GB > fallback
+        const ukFemale = voices.find(voice => 
+          voice.lang === 'en-GB' && (
+            voice.name.toLowerCase().includes('female') ||
+            voice.name.toLowerCase().includes('hazel') ||
+            voice.name.toLowerCase().includes('serena')
+          )
+        ) || voices.find(voice => voice.lang === 'en-GB') || voices[0];
+        
+        setUkFemaleVoice(ukFemale);
+      };
+
+      // Voices may load asynchronously
+      loadVoices();
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+  }, []);
 
   useEffect(() => {
     if (isSpeaking && speechText && isTTSEnabled && 'speechSynthesis' in window) {
       setCurrentlySpeaking(true);
       const utterance = new SpeechSynthesisUtterance(speechText);
+      
+      // Set UK female voice if available
+      if (ukFemaleVoice) {
+        utterance.voice = ukFemaleVoice;
+      }
+      
+      utterance.lang = 'en-GB'; // UK English
       utterance.rate = 0.9;
       utterance.pitch = 1.0;
       utterance.onend = () => {
@@ -26,7 +59,7 @@ export default function TrainingAvatar({ isSpeaking = false, speechText, onSpeec
       window.speechSynthesis.cancel();
       window.speechSynthesis.speak(utterance);
     }
-  }, [isSpeaking, speechText, isTTSEnabled, onSpeechComplete]);
+  }, [isSpeaking, speechText, isTTSEnabled, onSpeechComplete, ukFemaleVoice]);
 
   return (
     <div className="flex flex-col items-center space-y-4">

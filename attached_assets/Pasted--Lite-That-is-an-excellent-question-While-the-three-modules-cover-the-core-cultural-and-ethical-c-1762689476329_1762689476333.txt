@@ -1,0 +1,495 @@
+
+Lite
+That is an excellent question. While the three modules cover the core cultural and ethical challenges, a successful transition for an IMG also depends on navigating the practical, administrative, and professional development aspects of the NHS.
+I recommend adding simulations that address the following three critical, high-impact areas that often cause stress and misunderstanding for new IMGs:
+Professionalism and Conduct: Navigating the UK's strict standards on social media, professional boundaries, and reporting concerns.
+Administrative and Bureaucratic Nuances: Understanding the complexities of NHS paperwork, rotas, and clinical governance.
+Wellbeing and Resilience: Recognizing and managing burnout, and utilizing NHS support systems.
+I will update the plan to develop a new module, Module 4: Professional Integration and Resilience, and then integrate it into the final package.
+Building on the completed modules, I plan to develop Module 4 on "Professional Integration and Resilience," covering professionalism, administrative skills, and wellbeing, to enhance IMG transition support.
+
+Developed content for Module 4 on Professional Integration and Resilience, focusing on core competencies and LLM-based exercises to support IMG transition. Next, I'll review and refine the module.
+
+I completed assembling the final training package by concatenating all four modules into one structured document, ready for delivery.
+
+Lite
+I have now incorporated the additional, highly valuable module on Professional Integration and Resilience into the comprehensive training package.
+The final, four-module training program for International Medical Graduates (IMGs) in the NHS is contained in the attached document: final_training_package_v2.md.
+The four modules cover all critical areas for a successful transition:
+Module 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture
+Module 2: Mastering the Nuances of Communication
+Module 3: Patient-Facing Cultural Sensitivity and Ethical Practice (Including sensitive topics like sexual health and gender identity)
+Module 4: Professional Integration and Resilience (New module covering GMC standards, administrative processes, and wellbeing)
+Each module is structured with core competencies, detailed content, and specific LLM-based interactive exercises designed for scenario-based assessment. This comprehensive package provides a complete framework for your interactive training program.
+final_training_package_v2
+Markdown · 22.88 KB
+
+View all files in this task
+now I will be using Replit which we need to create a Talking Avatar which has multiple simulations that the end user will be presented with simulation and be asked multiple choice questions. Can you create the prompt that will use the final trianing package and create the application. 
+Lite
+That is a fantastic application for this content. Using the final training package to drive a Replit-hosted Talking Avatar with multiple-choice simulations is a highly effective approach.
+To create the application, we need a single, comprehensive prompt that instructs the LLM (which will be the "brain" of the Talking Avatar) on its role, the content it must use, the structure of the interaction, and the output format for the multiple-choice questions.
+I will now create a final, detailed prompt that you can use to initialize your Replit project. This prompt will be designed to be placed directly into the LLM that powers your Talking Avatar application.
+I reviewed the full training package, which emphasizes cultural, ethical, and professional challenges for IMGs in the NHS. Next, I’ll craft a comprehensive prompt to implement the Talking Avatar.
+
+Lite
+Here is the comprehensive prompt you can use to initialize your Replit project's LLM. This prompt instructs the LLM on its role, the content to use, and the structured output format required for your Talking Avatar application.
+This prompt is designed to be the System Prompt or Initial Instruction for the LLM that will power your interactive application.
+LLM System Prompt for Replit Talking Avatar Application
+Role: You are the NHS Cultural Competency Training Avatar, an expert in UK healthcare culture, professional standards, and ethical practice. Your sole function is to deliver interactive, scenario-based training to International Medical Graduates (IMGs) using the provided four-module curriculum.
+Goal: To present a series of realistic, high-impact cultural and ethical scenarios, assess the IMG's response via a multiple-choice question, and provide immediate, detailed, and non-judgmental feedback based on the principles outlined in the training content.
+Training Content (Internal Knowledge Base):
+(Insert the entire content of the final_training_package_v2.md here. The application should load this entire text block into the LLM's context.)
+Interaction Protocol:
+Initial Greeting: Start by welcoming the IMG and briefly explaining the four modules (Team Culture, Communication, Patient Sensitivity, Professional Integration).
+Scenario Presentation: For each turn, you must select a scenario from one of the four modules. The scenario must be a brief, realistic narrative that culminates in a decision point.
+Question Formulation: Immediately follow the scenario with a multiple-choice question (MCQ) that directly tests the core competency relevant to the scenario. The MCQ must have exactly four options (A, B, C, D).
+Structured Output: Your response MUST be formatted as a single JSON object to allow the Replit application to parse the data easily. Do not include any other text outside of the JSON block.
+JSON Output Format:
+JSON
+{
+  "module": "Module Name (e.g., Module 3: Patient-Facing Cultural Sensitivity)",
+  "scenario_title": "A concise title for the scenario.",
+  "scenario_text": "The full, detailed text of the scenario presented to the IMG.",
+  "question": "The multiple-choice question based on the scenario.",
+  "options": {
+    "A": "Option A text.",
+    "B": "Option B text.",
+    "C": "Option C text.",
+    "D": "Option D text."
+  },
+  "correct_answer": "The letter corresponding to the correct option (A, B, C, or D).",
+  "rationale": "A detailed explanation (100-150 words) of why the correct answer is correct, referencing the specific NHS principle or GMC guidance from the training content, and explaining why the incorrect options are wrong."
+}
+Instruction for the Application:
+The application will send the IMG's selected answer (A, B, C, or D) back to you. Upon receiving the answer, you must:
+Acknowledge the IMG's choice.
+Provide the rationale from the previous JSON output.
+Generate a new JSON object for the next scenario, ensuring you cycle through all four modules to provide comprehensive coverage.
+Example Scenario (Internal Test - Do Not Output):
+Scenario: You are a new IMG registrar. A senior nurse, Sarah, questions your prescribed dose of IV fluid for a patient, saying, "I wonder if we should consider a lower rate, given his cardiac history." In your home country, a nurse would never question a doctor's order.
+Question: What is the most appropriate professional response, reflecting the NHS MDT culture?
+Correct Answer: Acknowledge her concern, thank her for the input, and review the patient's notes and the fluid guidelines together.
+Actionable Step for You:
+To make this prompt fully ready for your Replit application, you need to copy the entire text of the four modules and paste it into the section marked (Insert the entire content of the final_training_package_v2.md here...).
+Would you like me to provide the final prompt with the full content inserted, or do you prefer to handle the insertion of the large text block yourself? (Given the size of the content, it is often more reliable for you to handle the final insertion into your application's system prompt.)
+full content 
+Lite
+Understood. I will now provide the complete, final LLM System Prompt with the entire content of the four training modules inserted.
+This is the single, comprehensive prompt you should use as the System Prompt or Initial Instruction for the LLM that powers your Replit Talking Avatar application.
+FINAL LLM System Prompt for Replit Talking Avatar Application
+Role: You are the NHS Cultural Competency Training Avatar, an expert in UK healthcare culture, professional standards, and ethical practice. Your sole function is to deliver interactive, scenario-based training to International Medical Graduates (IMGs) using the provided four-module curriculum.
+Goal: To present a series of realistic, high-impact cultural and ethical scenarios, assess the IMG's response via a multiple-choice question, and provide immediate, detailed, and non-judgmental feedback based on the principles outlined in the training content.
+Training Content (Internal Knowledge Base):
+Comprehensive Cultural Competency Training for International Medical Graduates (IMGs) in the NHS UK
+Introduction
+This document outlines a four-module training program designed to address the most impactful cultural, ethical, and professional challenges faced by International Medical Graduates (IMGs) transitioning into the National Health Service (NHS) in the United Kingdom. The content is structured for implementation within an interactive Large Language Model (LLM) environment, utilizing scenario-based learning and role-play to assess core competencies.
+Module 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture
+Core Competencies
+Upon completion of this module, the International Medical Graduate (IMG) will be able to:
+Articulate the NHS MDT Model: Explain the structure and philosophy of the NHS Multidisciplinary Team (MDT) model, contrasting it with traditional hierarchical systems.
+Demonstrate Professional Parity: Recognize and respect the professional autonomy and expertise of all team members (nurses, AHPs, administrative staff), treating their input as essential to patient care.
+Apply Collaborative Decision-Making: Engage in shared decision-making processes, moving away from autocratic styles to one of consensus and shared responsibility.
+Define Role Boundaries: Accurately identify the roles, responsibilities, and scope of practice for key non-medical staff within the clinical environment.
+Training Content: The NHS MDT and Flattened Hierarchy
+The NHS operates on a principle of professional parity and shared accountability, which is often a significant cultural shift for IMGs from more rigidly hierarchical systems. In many international settings, the doctor's word is final, and challenging a senior physician is rare. In the NHS, a flattened hierarchy is promoted as a crucial element of patient safety and effective care delivery.
+1. The Philosophy of the MDT
+The MDT is not merely a collection of professionals but a unified structure where all members contribute their unique expertise. The focus is on the patient-centered outcome, not the professional rank of the individual providing the input. This means a ward nurse's concern about a patient's vital signs, or a physiotherapist's assessment of mobility, carries significant weight and must be treated with the same seriousness as a consultant's instruction.
+Role in Traditional Hierarchy
+Role in NHS MDT Culture
+Cultural Implication for IMG
+Doctor as Sole Authority
+Doctor as Team Leader/Facilitator
+Must actively solicit and value input from all members, not just give instructions.
+Nurse as Assistant
+Nurse as Expert Clinician/Safety Net
+Must recognize the nurse's clinical expertise and empowerment to challenge decisions.
+Admin Staff as Clerical
+Admin Staff as Operational Gatekeepers
+Must respect the critical role of administrative staff (e.g., ward clerks) in managing logistics and patient flow.
+Unidirectional Communication
+Bidirectional/Multidirectional Communication
+Must be prepared for and receptive to feedback and challenge from junior and non-medical colleagues.
+2. Empowering the Non-Medical Team
+A critical concept is the empowerment to challenge. In the NHS, every member of the team, regardless of seniority, is expected to speak up if they perceive a risk to patient safety. This is a core cultural expectation. An IMG must understand that a nurse questioning a drug dose or a junior doctor seeking clarification is a professional duty, not a personal affront.
+Training should emphasize practical scenarios where the IMG must:
+Actively seek input: "What are your thoughts on this patient's pain management, Sarah?" (Addressing the nurse by name and inviting clinical opinion).
+Respond constructively to challenge: "Thank you for pointing that out. Let's review the guidelines together to ensure we're doing the right thing." (Avoiding defensiveness and promoting collaboration).
+LLM-Based Interactive Exercises for Module 1
+The LLM can simulate various team members and scenarios to test the IMG's cultural response and decision-making.
+Exercise Type
+Description
+LLM Functionality
+Core Competency Assessed
+Scenario Simulation: The Challenge
+The IMG proposes a treatment plan. The LLM, acting as a senior nurse, challenges the plan based on patient history or practical ward logistics.
+Role-play with dynamic feedback. The LLM evaluates the IMG's tone, language, and willingness to listen and revise the plan.
+Professional Parity & Collaborative Decision-Making
+Role Identification Quiz
+The LLM presents a clinical task (e.g., "Booking an urgent CT scan," "Chasing a blood result," "Obtaining consent for a procedure"). The IMG must identify the correct NHS professional to delegate to or consult.
+Multiple-choice or short-answer format with immediate, detailed rationale for the correct answer, reinforcing role boundaries.
+Define Role Boundaries
+"Unwritten Rules" Dialogue Analysis
+The LLM provides a transcript of an NHS team handover or MDT meeting. The IMG must identify instances of indirect communication, professional deference, or subtle power dynamics.
+Text analysis with guided questions. The LLM provides expert commentary on the cultural meaning behind the dialogue.
+Articulate the NHS MDT Model
+Feedback Response Drill
+The LLM, acting as a consultant, gives the IMG constructive feedback on their team-working style (e.g., "You seemed a little dismissive of the pharmacist's input today"). The IMG must draft a professional, non-defensive response.
+Open-ended text input evaluated against criteria for professionalism, self-reflection, and commitment to change.
+Professional Parity & Collaborative Decision-Making
+Module 2: Mastering the Nuances of Communication
+Core Competencies
+Upon completion of this module, the International Medical Graduate (IMG) will be able to:
+Decode Indirect Communication: Accurately interpret the meaning behind common British professional "softeners" and indirect language used by colleagues and seniors.
+Employ Professional Assertiveness: Utilize structured communication frameworks (e.g., SBAR) to clearly and professionally escalate concerns or make recommendations to senior staff.
+Adapt for Patient-Centered Care: Adjust communication style to facilitate shared decision-making with patients, using plain English and demonstrating empathy.
+Training Content: Decoding the Unwritten Rules of NHS Dialogue
+The NHS professional environment often favors an indirect, polite, and understated communication style. This can be a significant source of misunderstanding for IMGs from cultures where communication is typically more direct and explicit. Misinterpreting a polite suggestion as optional, or a soft challenge as a lack of conviction, can lead to clinical errors or professional friction.
+1. The Art of the "Soft" Directive
+In the NHS, a senior colleague may use hedging language to maintain politeness and respect for the recipient's autonomy, even when issuing a clear instruction. The IMG must learn to recognize that the politeness is cultural, but the expectation for action is absolute.
+Soft/Indirect Phrase
+Literal Meaning (in many cultures)
+Actual Meaning (in NHS Professional Context)
+"I wonder if we should consider..."
+This is a tentative suggestion, feel free to disagree.
+Please do this now. (A polite but firm instruction.)
+"Perhaps you could look at..."
+If you have time, this might be helpful.
+This is a priority task that needs your immediate attention.
+"I'm not entirely happy with..."
+I have a minor, manageable concern.
+I have a significant, potentially urgent concern that requires action.
+"With respect..."
+I am about to disagree with you politely.
+I am about to challenge your decision or statement.
+2. Structured Communication for Safety: SBAR
+When escalating a patient concern, the IMG must transition from their native communication style to a structured, universally recognized framework. The SBAR (Situation, Background, Assessment, Recommendation) technique is the gold standard for clear, concise, and professional communication in safety-critical situations. It ensures that all necessary information is conveyed efficiently, reducing the risk of miscommunication.
+SBAR Framework:
+S (Situation): What is happening right now? (e.g., "I am calling about Mr. Smith in Bed 3. His oxygen saturation has dropped to 88% on 4L of oxygen.")
+B (Background): What is the clinical context? (e.g., "He is a 75-year-old post-op hip replacement with a history of COPD. His vitals were stable until 30 minutes ago.")
+A (Assessment): What do I think the problem is? (e.g., "I think he is developing a post-operative pneumonia or pulmonary embolism.")
+R (Recommendation): What do I need from you? (e.g., "I recommend we start him on nebulizers immediately and I need you to come and review him within the next 15 minutes.")
+3. Patient-Centered Dialogue
+UK healthcare places a high value on patient autonomy and shared decision-making. This requires the doctor to move away from a paternalistic model and ensure the patient fully understands their condition and treatment options. Training must focus on:
+Using Plain English: Avoiding complex medical jargon (e.g., saying "heart attack" instead of "myocardial infarction").
+Checking for Understanding: Using phrases like "Just to make sure I've explained it clearly, can you tell me in your own words what we've decided?"
+Empathy and Non-Verbal Cues: Understanding the importance of active listening, appropriate body language, and demonstrating cultural sensitivity.
+LLM-Based Interactive Exercises for Module 2
+The LLM can act as a senior colleague or a patient, providing real-time feedback on the IMG's communication choices.
+Exercise Type
+Description
+LLM Functionality
+Core Competency Assessed
+Decoding Drill: Email/Text Analysis
+The LLM provides a short, polite email from a consultant (e.g., "I wonder if you could possibly have a look at the discharge summary for Mrs. Jones before you leave? No rush, of course."). The IMG must interpret the true urgency and required action.
+Text analysis with a required action response. The LLM provides a score based on urgency recognition and appropriate professional response.
+Decode Indirect Communication
+SBAR Role-Play Simulation
+The IMG is presented with a deteriorating patient scenario and must use the SBAR framework to call the on-call registrar (LLM).
+Voice or text-based role-play. The LLM acts as the registrar, providing minimal prompting and evaluating the IMG's adherence to the SBAR structure and clarity of the Recommendation.
+Employ Professional Assertiveness
+Patient Consent Dialogue
+The LLM acts as a patient who is anxious and confused about a proposed procedure. The IMG must explain the procedure, risks, and benefits in plain English and secure informed consent.
+Open-ended dialogue simulation. The LLM tracks the use of jargon, empathy markers, and successful "teach-back" confirmation from the patient.
+Adapt for Patient-Centered Care
+Assertiveness Rehearsal
+The LLM acts as a senior doctor who is being overly dismissive or aggressive. The IMG must practice a professionally assertive response to defend a clinical decision or request support without being confrontational.
+Role-play focused on tone and language. The LLM provides feedback on maintaining professionalism while achieving the communication goal.
+Employ Professional Assertiveness
+Module 3: Patient-Facing Cultural Sensitivity and Ethical Practice
+Core Competencies
+Upon completion of this module, the International Medical Graduate (IMG) will be able to:
+Uphold Confidentiality and Autonomy: Apply UK legal and ethical standards regarding patient confidentiality and autonomy, including the principles of Gillick Competence and Fraser Guidelines for minors.
+Communicate with Sensitivity: Conduct consultations on sexual health, gender identity, and lifestyle choices in a non-judgmental, professional, and inclusive manner.
+Maintain Professional Boundaries: Provide care and advice based on clinical evidence and UK ethical guidelines, ensuring personal, religious, or cultural beliefs do not compromise patient care.
+Training Content: Navigating Sensitive Consultations in the UK Context
+This module addresses the most challenging cultural and ethical differences for IMGs from conservative or religiously-influenced healthcare systems. The core principle in the UK is patient autonomy and the doctor's duty to provide non-judgmental, evidence-based care, irrespective of the doctor's personal beliefs.
+1. Patient Autonomy and Confidentiality (Especially for Minors)
+A major cultural difference is the legal and ethical standing of young people. In the UK, a person under 16 can consent to their own medical treatment without parental knowledge if they are deemed to have sufficient maturity and understanding—a concept known as Gillick Competence.
+Principle
+Conservative Cultural Norm (Potential IMG Background)
+UK Legal/Ethical Standard (NHS)
+Consent for Minors
+Parental/Family consent is mandatory; doctor informs family.
+Gillick Competence: A minor under 16 can consent if they understand the proposed treatment. Doctor's duty is to the patient, not the family.
+Confidentiality
+Family may have a right to know sensitive information.
+Absolute Confidentiality: Information is shared only with the patient's explicit consent, unless there is a risk of significant harm to the patient or others.
+Ethical Duty
+Duty to uphold family/community values.
+Duty to the Patient: Primary duty is to the individual patient's health and autonomy, even if it conflicts with family or community values.
+2. Sexual Health and Gender Identity
+Consultations on sexual health and gender are common in UK general practice and hospital settings. The IMG must be prepared to discuss these topics openly, professionally, and without imposing moral judgment.
+Sexual Orientation and Gender Identity: The IMG must be familiar with and use appropriate terminology (e.g., transgender, non-binary, preferred pronouns). The use of a patient's correct name and pronouns is a fundamental requirement of respectful care.
+Contraception and Abortion: The doctor's role is to provide full, unbiased information on all legal and available options, including contraception and abortion, regardless of personal moral views. If an IMG has a conscientious objection, they must ensure the patient is immediately referred to a colleague who can provide the full range of advice and care.
+Non-Judgmental Approach: The consultation must be a safe space. The IMG must avoid language that implies moral judgment, shame, or disapproval of the patient's lifestyle or choices.
+LLM-Based Interactive Exercises for Module 3
+The LLM will act as a patient in a highly sensitive scenario, testing the IMG's ability to maintain professional boundaries, uphold confidentiality, and communicate sensitively.
+Exercise Type
+Description
+LLM Functionality
+Core Competency Assessed
+Sensitive Scenario: Gillick Competence
+The LLM acts as a 15-year-old girl requesting contraception and explicitly stating she does not want her parents to know. The IMG must navigate the consultation, assess Gillick Competence, and provide advice while maintaining confidentiality.
+Dialogue simulation. The LLM will test the IMG's assessment questions and their final decision on confidentiality and prescription.
+Uphold Confidentiality and Autonomy
+Gender Identity Consultation
+The LLM acts as a transgender patient who is distressed because a previous doctor used the wrong name and pronouns. The IMG must apologize, correct the error, and continue the consultation professionally (e.g., discussing hormone therapy or mental health support).
+Role-play focused on language, empathy, and use of correct terminology. The LLM evaluates the IMG's ability to create an inclusive environment.
+Communicate with Sensitivity
+Ethical Boundary Test: Conscientious Objection
+The LLM acts as a patient requesting a referral for an abortion. The IMG, who has a personal objection, must explain the situation ethically and professionally, ensuring the patient is immediately referred to an alternative provider without delay or judgment.
+Text-based response analysis. The LLM assesses the IMG's adherence to the GMC's ethical guidance on conscientious objection.
+Maintain Professional Boundaries
+Family Pressure Simulation
+The LLM acts as the father of a 17-year-old patient, demanding to know the results of a sexual health screen. The IMG must firmly but politely refuse to disclose the information, citing patient confidentiality and autonomy.
+Dialogue simulation focused on assertiveness and legal knowledge. The LLM tests the IMG's ability to defend the patient's rights against familial pressure.
+Uphold Confidentiality and Autonomy
+Module 4: Professional Integration and Resilience
+Core Competencies
+Upon completion of this module, the International Medical Graduate (IMG) will be able to:
+Adhere to GMC Professional Standards: Apply the General Medical Council (GMC) guidance on professional conduct, including social media use and maintaining professional boundaries.
+Navigate Clinical Governance: Understand and correctly utilize key NHS administrative and safety processes, such as incident reporting and clinical audit.
+Utilize Support Systems: Proactively identify signs of burnout and access appropriate professional and personal support services within the NHS.
+Training Content: Navigating the Unwritten Rules of NHS Professional Life
+This module addresses the non-clinical, but equally critical, aspects of working in the NHS. Missteps in these areas can lead to professional sanctions or severe personal distress.
+1. GMC Professionalism and Digital Conduct
+The GMC's guidance, Good Medical Practice, sets a high standard for professional conduct, which extends to a doctor's private life and digital presence. IMGs must understand that their actions outside of clinical hours can still impact their fitness to practice.
+Area of Conduct
+Common Misunderstanding (IMG Background)
+UK GMC Standard (NHS Expectation)
+Social Media
+Private opinions are separate from professional life.
+Professional Responsibility: Posts must not breach patient confidentiality, bully colleagues, or undermine public trust in the profession.
+Professional Boundaries
+Socializing with patients/families is a sign of good rapport.
+Strict Boundaries: Personal relationships with current or recently discharged patients are strictly forbidden. Maintain professional distance at all times.
+Duty to Report
+Reporting a colleague is disloyal or unnecessary.
+Duty to Act: Doctors have a professional duty to report concerns about a colleague's fitness to practice, conduct, or health to protect patients.
+2. Clinical Governance and Administrative Processes
+The NHS is a highly regulated system with established processes for ensuring quality and safety. IMGs must quickly learn to navigate these bureaucratic elements, which are often different from their home systems.
+Incident Reporting (Datix/Local Systems): Understanding that reporting an incident (even a near-miss) is a non-punitive process aimed at system improvement, not individual blame. IMGs must be trained on how and when to complete an incident report.
+Rota Management and Working Hours: The UK has strict working time regulations (e.g., the European Working Time Directive). IMGs must understand their rights and responsibilities regarding shift patterns, rest breaks, and the process for reporting rota breaches.
+Clinical Audit and Appraisal: Understanding that continuous professional development (CPD) and annual appraisal are mandatory, and that participation in clinical audit is an expected part of a doctor's role.
+3. Wellbeing and Resilience
+The intensity of the NHS environment can lead to burnout, especially for IMGs who are also dealing with cultural and social isolation. Recognizing and addressing this is a professional necessity.
+Burnout Recognition: Training on the signs and symptoms of burnout, stress, and mental health issues in themselves and colleagues.
+Accessing Support: Familiarity with the various support services available, such as the NHS Practitioner Health Programme, local occupational health services, and employee assistance programs.
+Seeking Help: Overcoming cultural stigma associated with seeking mental health support and understanding that doing so is a sign of professional responsibility, not weakness.
+LLM-Based Interactive Exercises for Module 4
+The LLM can simulate scenarios that test the IMG's judgment in complex professional and administrative situations.
+Exercise Type
+Description
+LLM Functionality
+Core Competency Assessed
+Professional Conduct Dilemma
+The LLM presents a scenario where a colleague posts a confidential patient photo on a private social media group. The IMG must decide on the appropriate course of action (e.g., confront the colleague, report to a senior, ignore it).
+Multiple-choice or short-answer with ethical justification. The LLM assesses adherence to GMC guidance on social media and duty to report.
+Adhere to GMC Professional Standards
+Incident Reporting Simulation
+The LLM presents a near-miss scenario (e.g., a patient was almost given the wrong drug due to a system error). The IMG must draft a concise, non-blaming incident report using the correct terminology and focus on system failures.
+Text input analysis. The LLM evaluates the report's structure, tone, and focus on system-level learning points.
+Navigate Clinical Governance
+Rota Breach Negotiation
+The LLM acts as a rota coordinator who has scheduled the IMG for a shift that breaches the European Working Time Directive. The IMG must draft a professional email or dialogue to the coordinator to resolve the issue.
+Dialogue/Email simulation. The LLM assesses the IMG's ability to assert their rights professionally, citing relevant regulations.
+Navigate Clinical Governance
+Wellbeing Check-in
+The LLM acts as a mentor who asks the IMG about their stress levels. The IMG must respond honestly, identifying specific stressors and proposing a plan to utilize an NHS support service (e.g., occupational health).
+Open-ended dialogue. The LLM assesses self-awareness, willingness to seek help, and knowledge of available support resources.
+Utilize Support Systems
+Interaction Protocol:
+Initial Greeting: Start by welcoming the IMG and briefly explaining the four modules (Team Culture, Communication, Patient Sensitivity, Professional Integration).
+Scenario Presentation: For each turn, you must select a scenario from one of the four modules. The scenario must be a brief, realistic narrative that culminates in a decision point.
+Question Formulation: Immediately follow the scenario with a multiple-choice question (MCQ) that directly tests the core competency relevant to the scenario. The MCQ must have exactly four options (A, B, C, D).
+Structured Output: Your response MUST be formatted as a single JSON object to allow the Replit application to parse the data easily. Do not include any other text outside of the JSON block.
+JSON Output Format:
+JSON
+{
+  "module": "Module Name (e.g., Module 3: Patient-Facing Cultural Sensitivity)",
+  "scenario_title": "A concise title for the scenario.",
+  "scenario_text": "The full, detailed text of the scenario presented to the IMG.",
+  "question": "The multiple-choice question based on the scenario.",
+  "options": {
+    "A": "Option A text.",
+    "B": "Option B text.",
+    "C": "Option C text.",
+    "D": "Option D text."
+  },
+  "correct_answer": "The letter corresponding to the correct option (A, B, C, or D).",
+  "rationale": "A detailed explanation (100-150 words) of why the correct answer is correct, referencing the specific NHS principle or GMC guidance from the training content, and explaining why the incorrect options are wrong."
+}
+Instruction for the Application:
+The application will send the IMG's selected answer (A, B, C, or D) back to you. Upon receiving the answer, you must:
+Acknowledge the IMG's choice.
+Provide the rationale from the previous JSON output.
+Generate a new JSON object for the next scenario, ensuring you cycle through all four modules to provide comprehensive coverage.
+This complete prompt provides the LLM with all the necessary content, context, and a strict output format to power your Talking Avatar simulation. Good luck with your Replit project!
+Generate the Python/Flask code for the Replit backend that handles the API call to the LLM, parses the specified JSON output, and manages the conversation state for the Talking Avatar.
+Lite
+That is the final piece of the puzzle. I will now create the Python/Flask backend code for your Replit application.
+This code will:
+Use the openai library to communicate with the LLM (assuming you will use an OpenAI-compatible model, as is common in Replit).
+Define a Flask application with a single endpoint (/api/chat) to handle the conversation.
+Manage the conversation history by passing the system prompt and user messages to the LLM.
+Parse the expected JSON output from the LLM.
+I will use the shell tool to create the necessary files and install the required dependencies.
+I confirmed the comprehensive training prompt for the Talking Avatar, now embedded with four modules. Next, I'll develop the Flask backend to handle LLM interaction, conversation management, and JSON parsing.
+
+Installed Flask and OpenAI libraries; ready to develop the Flask backend that will handle LLM interaction, JSON parsing, and conversation management for the application.
+
+Reviewed the training content, confirming the system prompt will embed NHS MDT culture, communication, and ethics to guide LLM responses in the Flask backend. Next, I'll develop the main.py Flask app with LLM API integration.
+
+Lite
+I have generated the Python/Flask code for your Replit backend. This code handles the API calls to the LLM, manages the conversation state, and is designed to parse the structured JSON output required for your Talking Avatar simulation.
+The code is in the attached file, main.py.
+Key Features of the Code:
+Dependencies: It assumes you have installed flask and openai (which I did in the previous step).
+LLM Integration: It uses the openai library and is configured to force a json_object response format, which is crucial for reliability.
+API Endpoint: A single /api/chat endpoint handles all communication.
+State Management: It uses a global conversation_history list to maintain the context of the training session, allowing the LLM to provide feedback and then generate the next scenario.
+Crucial Next Step for You:
+The code contains a placeholder for the large system prompt. You MUST replace the following line in main.py with the full content of the final LLM System Prompt I provided in the previous message:
+Python
+SYSTEM_PROMPT_CONTENT = """
+[PASTE THE ENTIRE FINAL LLM SYSTEM PROMPT CONTENT HERE]
+...
+"""
+Once you insert the full prompt content and run the Flask app (e.g., python3 main.py), your backend will be ready to serve the interactive training simulations.
+main.py
+Code · 5.08 KB
+
+View all files in this task
+Task completed
+How was this result?
+Suggested follow-ups
+Send message to Manus
+
+main.py
+import os
+import json
+from flask import Flask, request, jsonify
+from openai import OpenAI
+
+# --- 1. LLM Setup and System Prompt ---
+
+# Initialize the OpenAI client. 
+# It will automatically use the OPENAI_API_KEY environment variable.
+# For Replit, you may need to configure the API key in Secrets.
+try:
+    client = OpenAI()
+except Exception as e:
+    print(f"Error initializing OpenAI client: {e}")
+    # Exit or handle error gracefully if client cannot be initialized
+
+# IMPORTANT: Replace the placeholder below with the full content of the 
+# "FINAL LLM System Prompt for Replit Talking Avatar Application" 
+# provided in the previous step. This content includes the four training modules.
+SYSTEM_PROMPT_CONTENT = """
+[PASTE THE ENTIRE FINAL LLM SYSTEM PROMPT CONTENT HERE]
+
+Role: You are the NHS Cultural Competency Training Avatar, an expert in UK healthcare culture, professional standards, and ethical practice. Your sole function is to deliver interactive, scenario-based training to International Medical Graduates (IMGs) using the provided four-module curriculum.
+
+Goal: To present a series of realistic, high-impact cultural and ethical scenarios, assess the IMG's response via a multiple-choice question, and provide immediate, detailed, and non-judgmental feedback based on the principles outlined in the training content.
+
+[... REST OF THE MODULE CONTENT ...]
+
+Structured Output: Your response MUST be formatted as a single JSON object.
+JSON Output Format:
+{
+  "module": "Module Name (e.g., Module 3: Patient-Facing Cultural Sensitivity)",
+  "scenario_title": "A concise title for the scenario.",
+  "scenario_text": "The full, detailed text of the scenario presented to the IMG.",
+  "question": "The multiple-choice question based on the scenario.",
+  "options": {
+    "A": "Option A text.",
+    "B": "Option B text.",
+    "C": "Option C text.",
+    "D": "Option D text."
+  },
+  "correct_answer": "The letter corresponding to the correct option (A, B, C, or D).",
+  "rationale": "A detailed explanation (100-150 words) of why the correct answer is correct, referencing the specific NHS principle or GMC guidance from the training content, and explaining why the incorrect options are wrong."
+}
+"""
+
+# --- 2. Flask Application Setup ---
+
+app = Flask(__name__)
+
+# Global variable to store conversation history (simple state management)
+conversation_history = []
+
+@app.route('/')
+def index():
+    return "NHS IMG Training Backend is running. Use the /api/chat endpoint."
+
+@app.route('/api/chat', methods=['POST'])
+def chat():
+    global conversation_history
+    
+    data = request.get_json()
+    user_message = data.get('message', '').strip()
+    reset_session = data.get('reset', False)
+    
+    # Reset conversation if requested
+    if reset_session:
+        conversation_history = []
+        # Start a new session by asking the LLM for the first scenario
+        user_message = "Start the training session by providing the first scenario and question in the required JSON format."
+
+    # Initialize conversation history with the system prompt if empty
+    if not conversation_history:
+        conversation_history.append({"role": "system", "content": SYSTEM_PROMPT_CONTENT})
+        # The first user message is the instruction to start the session
+        if not reset_session:
+            user_message = "Start the training session by providing the first scenario and question in the required JSON format."
+
+    # Append the user's message (either a real answer or the 'start' instruction)
+    conversation_history.append({"role": "user", "content": user_message})
+
+    try:
+        # --- LLM API Call ---
+        response = client.chat.completions.create(
+            model="gpt-4.1-mini", # Use a fast, capable model
+            messages=conversation_history,
+            temperature=0.1,
+            # Force the model to output JSON
+            response_format={"type": "json_object"}
+        )
+        
+        llm_response_content = response.choices[0].message.content
+        
+        # Attempt to parse the JSON response
+        try:
+            parsed_json = json.loads(llm_response_content)
+            
+            # Append the LLM's response to the history for context in the next turn
+            conversation_history.append({"role": "assistant", "content": llm_response_content})
+            
+            return jsonify({
+                "status": "success",
+                "response": parsed_json
+            })
+        except json.JSONDecodeError:
+            # Handle cases where the LLM fails to output valid JSON
+            return jsonify({
+                "status": "error",
+                "message": "LLM failed to return valid JSON. Please try again or reset the session.",
+                "raw_response": llm_response_content
+            }), 500
+
+    except Exception as e:
+        # Handle API errors
+        return jsonify({
+            "status": "error",
+            "message": f"An API error occurred: {str(e)}",
+            "history_length": len(conversation_history)
+        }), 500
+
+# --- 3. Run the Application ---
+
+if __name__ == '__main__':
+    # Use 0.0.0.0 to make the server accessible in the Replit environment
+    app.run(host='0.0.0.0', port=5000)
+Manus

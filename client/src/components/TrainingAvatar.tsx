@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import avatarImage from "@assets/generated_images/NHS_training_avatar_instructor_a5fd4e89.png";
+import avatarImage from "@assets/generated_images/NHS_ethnic_background_doctor_avatar_de085b16.png";
 import { Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 

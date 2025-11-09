@@ -1,6 +1,8 @@
 import { Scenario } from "@shared/schema";
 
 // Comprehensive training scenarios (40 total - 10 per module)
+// Each scenario includes GMC and NHS authoritative source references
+
 export const mockScenarios: Scenario[] = [
   // MODULE 1: Navigating the Non-Hierarchical, Multidisciplinary Team Culture (Scenarios 1-10)
   {
@@ -16,7 +18,7 @@ export const mockScenarios: Scenario[] = [
       D: "Ask the nurse to call the Registrar (senior doctor) to resolve the disagreement."
     },
     correct_answer: "C",
-    rationale: "Excellent! This response perfectly demonstrates the NHS MDT culture. By acknowledging the nurse's expertise and reviewing the guidelines together, you show professional parity and collaborative decision-making. In the NHS, a senior nurse's clinical input is invaluable, especially regarding patient safety concerns."
+    rationale: "Excellent! This response perfectly demonstrates NHS MDT culture.\n\n**GMC Good Medical Practice 2024 - Domain 3 (Colleagues, Culture and Safety)** requires doctors to \"work collaboratively with colleagues while respecting their roles and contributions\" and \"engage with colleagues in a manner that prioritises patient welfare.\"\n\nBy acknowledging the nurse's expertise and reviewing guidelines together, you demonstrate professional parity and collaborative decision-making. Senior nurses have invaluable clinical experience, particularly regarding patient safety concerns.\n\n**NHS Constitution** emphasizes that \"patient safety, experience and outcomes are all improved when staff are valued, empowered and supported.\"\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3: Colleagues, Culture and Safety; NHS Constitution Principle 3"
   },
   {
     module: "Module 1: Team Culture",
@@ -31,7 +33,7 @@ export const mockScenarios: Scenario[] = [
       D: "Tell her that if the patient deteriorates, it will be her responsibility."
     },
     correct_answer: "B",
-    rationale: "Correct! This demonstrates respect for the clerk's role and understanding that discharge processes are clinically important. By explaining urgency and asking about the proper process, you show collaborative problem-solving while maintaining professional relationships."
+    rationale: "Correct! This demonstrates respect for the clerk's role and understanding that discharge processes are clinically important.\n\n**GMC Good Medical Practice 2024 - Domain 3** states you must \"treat all colleagues with kindness, courtesy and respect\" and \"work collaboratively with colleagues (nurses, allied health professionals, administrative staff) while respecting their roles and contributions.\"\n\nBy explaining urgency and asking about proper processes, you show collaborative problem-solving while maintaining professional relationships. Discharge coordination is essential for patient flow and safety.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3: Colleagues, Culture and Safety"
   },
   {
     module: "Module 1: Team Culture",
@@ -46,7 +48,7 @@ export const mockScenarios: Scenario[] = [
       D: "The pharmacist is implying that you are incompetent and should have checked the renal function yourself."
     },
     correct_answer: "B",
-    rationale: "Excellent! The pharmacist is fulfilling their professional role as part of the MDT safety net. In the NHS, pharmacists are medication experts and their input is expected and valued. This collaborative approach prevents medication errors and improves patient safety."
+    rationale: "Excellent! The pharmacist is fulfilling their professional role as part of the MDT safety net.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires doctors to \"work collaboratively with colleagues while respecting their roles and contributions.\" Pharmacists are medication experts and their clinical input is expected and valued in NHS culture.\n\n**NHS Patient Safety** frameworks recognize that multidisciplinary input prevents medication errors and improves outcomes. This collaborative approach exemplifies the safety net principle where multiple professionals protect patient welfare.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3; National Patient Safety Agency (NPSA) Medication Safety Guidelines"
   },
   {
     module: "Module 1: Team Culture",
@@ -61,7 +63,7 @@ export const mockScenarios: Scenario[] = [
       D: "Suggest they write down their thoughts and pass them to you discreetly."
     },
     correct_answer: "B",
-    rationale: "Correct! Speaking up is not just encouraged in the NHS - it's a professional duty. The flat hierarchy model means that patient safety concerns can be raised by anyone, regardless of seniority. This cultural shift is essential for preventing errors and ensuring safe care."
+    rationale: "Correct! Speaking up is not just encouraged in the NHS—it's a professional duty.\n\n**NHS Constitution** guarantees staff \"the right to raise concerns about safety, malpractice or other risks in the public interest\" and pledges to \"encourage and support staff in raising concerns at the earliest opportunity.\"\n\n**Freedom to Speak Up** (established 2016 following Mid Staffordshire inquiry) emphasizes that speaking up should be \"routine business in well-led NHS organizations.\" The flat hierarchy model means patient safety concerns can be raised by anyone, regardless of seniority.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires creating cultures where staff can \"ask questions, talk about errors, and raise concerns safely.\"\n\n**Reference:** NHS Constitution; Freedom to Speak Up Framework (2016); GMC Good Medical Practice 2024, Domain 3"
   },
   {
     module: "Module 1: Team Culture",
@@ -76,7 +78,7 @@ export const mockScenarios: Scenario[] = [
       D: "It is an informal way for senior staff to assess your social skills."
     },
     correct_answer: "C",
-    rationale: "Excellent! Team breaks are vital for building the trust and rapport that underpin effective MDT communication. When a critical situation arises, team members who have strong relationships communicate more openly and effectively, directly improving patient safety."
+    rationale: "Excellent! Team breaks are vital for building trust and rapport that underpin effective MDT communication.\n\n**GMC Good Medical Practice 2024 - Domain 3** emphasizes helping create cultures that are \"respectful, fair, supportive, and compassionate\" and building effective working relationships through \"knowledge sharing through informal and formal channels.\"\n\nResearch shows that when critical situations arise, team members with strong relationships communicate more openly and effectively, directly improving patient safety and clinical outcomes.\n\n**NHS Leadership Academy** recognizes that informal team building is essential for psychological safety and effective collaboration.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3: Colleagues, Culture and Safety; NHS Leadership Academy - Building Team Effectiveness"
   },
   {
     module: "Module 1: Team Culture",
@@ -91,7 +93,7 @@ export const mockScenarios: Scenario[] = [
       D: "Tell her that cannulation is a basic nursing skill and she must comply."
     },
     correct_answer: "B",
-    rationale: "Correct! This demonstrates understanding that all team members have important clinical priorities. By recognizing her time-critical task and finding an alternative solution, you show professional respect and flexibility while ensuring patient care."
+    rationale: "Correct! This demonstrates understanding that all team members have important clinical priorities.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires you to \"adapt leadership roles as necessary—lead or follow as circumstances require\" and recognize that effective teamwork means understanding colleagues' responsibilities.\n\nBy recognizing her time-critical task (medication administration) and finding alternative solutions, you show professional respect and flexibility while ensuring patient care. Time-critical medications must not be interrupted.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3: Colleagues, Culture and Safety; NMC Standards for Medicine Management"
   },
   {
     module: "Module 1: Team Culture",
@@ -106,7 +108,7 @@ export const mockScenarios: Scenario[] = [
       D: "It is a test of your ability to solve problems independently."
     },
     correct_answer: "B",
-    rationale: "Excellent! This is a genuine invitation reflecting the NHS culture of early escalation and open communication. Raising concerns early prevents problems from escalating and is a key part of patient safety culture. Consultants expect and value this communication."
+    rationale: "Excellent! This is a genuine invitation reflecting NHS culture of early escalation and open communication.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires doctors to be \"accessible to colleagues seeking information, advice, or support when on duty\" and to help create cultures where staff can \"ask questions and raise concerns safely.\"\n\n**NHS Patient Safety Framework** emphasizes early escalation prevents problems from deteriorating. Consultants expect and value this communication as part of creating psychologically safe learning environments.\n\n**National Guardian's Office** promotes that speaking up should be \"routine business in well-led NHS organizations.\"\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3; NHS Patient Safety Framework; Freedom to Speak Up"
   },
   {
     module: "Module 1: Team Culture",
@@ -121,7 +123,7 @@ export const mockScenarios: Scenario[] = [
       D: "Assume it is not important and continue with your tasks."
     },
     correct_answer: "C",
-    rationale: "Correct! This balances the need for clarification with respect for the handover process. Asking discreetly shows professional humility and commitment to patient safety. Never pretend to understand medical information - patient safety always comes first."
+    rationale: "Correct! This balances clarification needs with respect for handover processes.\n\n**GMC Good Medical Practice 2024 - Domain 1 (Knowledge, Skills and Performance)** states you must \"recognise and work within the limits of your competence\" and \"be honest about your knowledge and experience.\"\n\nAsking discreetly shows professional humility and commitment to patient safety. Never pretend to understand medical information—patient safety always comes first.\n\n**NHS Communication Standards** emphasize that effective handovers require shared understanding of all clinical information.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 1: Knowledge, Skills and Performance; NHS England Safe Handover Guidance"
   },
   {
     module: "Module 1: Team Culture",
@@ -136,7 +138,7 @@ export const mockScenarios: Scenario[] = [
       D: "The Ward Manager's, as they control the bed flow."
     },
     correct_answer: "C",
-    rationale: "Excellent! Discharge decisions in the NHS require MDT consensus. While the doctor assesses medical fitness, the physiotherapist is the expert in functional safety. A patient who is medically fit but functionally unsafe is not ready for discharge. This collaborative approach ensures holistic patient care."
+    rationale: "Excellent! Discharge decisions in the NHS require MDT consensus.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires collaborative working and recognizing that \"work collaboratively with colleagues while respecting their roles and contributions.\"\n\nWhile doctors assess medical fitness, physiotherapists are experts in functional safety. A patient who is medically fit but functionally unsafe is not ready for discharge. This holistic approach ensures patient safety and reduces readmissions.\n\n**NICE Discharge Planning Guidance** emphasizes MDT assessment for safe discharge.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3; NICE Clinical Guideline NG27 - Transition Between Inpatient Hospital Settings and Community or Care Home Settings"
   },
   {
     module: "Module 1: Team Culture",
@@ -151,7 +153,7 @@ export const mockScenarios: Scenario[] = [
       D: "You are spending too much time on the ward."
     },
     correct_answer: "B",
-    rationale: "Correct! Your supervisor is addressing your leadership style within the flat hierarchy of the NHS MDT. Being 'autocratic' suggests you're working in a top-down manner rather than collaboratively. Effective delegation in the NHS means recognizing team members' expertise and working with them as partners."
+    rationale: "Correct! Your supervisor is addressing your leadership style within the flat hierarchy of the NHS MDT.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires you to \"adapt leadership roles as necessary—lead or follow as circumstances require\" and work collaboratively recognizing team members' expertise.\n\nBeing 'autocratic' suggests top-down working rather than collaborative partnership. Effective NHS delegation means recognizing team members' expertise and working with them as partners, not subordinates.\n\n**NHS Leadership Academy** emphasizes shared leadership and collaborative practice as core competencies.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3: Colleagues, Culture and Safety; NHS Leadership Academy - Healthcare Leadership Model"
   },
   
   // MODULE 2: Mastering the Nuances of Communication (Scenarios 11-20)
@@ -168,7 +170,7 @@ export const mockScenarios: Scenario[] = [
       D: "The Consultant is genuinely unsure if the task is important."
     },
     correct_answer: "B",
-    rationale: "Correct! In NHS culture, 'I wonder if you could...' and 'no rush' are polite softeners that maintain collegial tone, but the expectation is clear: this should be done today. Understanding these indirect communication styles is crucial for professional success."
+    rationale: "Correct! In NHS culture, 'I wonder if you could...' and 'no rush' are polite softeners that maintain collegial tone, but the expectation is clear: complete this today.\n\n**GMC Good Medical Practice 2024 - Domain 2 (Patients, Partnership and Communication)** requires you to \"communicate clearly and work effectively with colleagues.\"\n\nUnderstanding these indirect British communication styles is crucial for professional success. The politeness maintains flat hierarchy while conveying clear expectations. Discharge summaries are medico-legally important documents.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2: Patients, Partnership and Communication; Domain 3: Colleagues, Culture and Safety"
   },
   {
     module: "Module 2: Communication",
@@ -183,7 +185,7 @@ export const mockScenarios: Scenario[] = [
       D: "ABCDE (Airway, Breathing, Circulation, Disability, Exposure)"
     },
     correct_answer: "B",
-    rationale: "Correct! SBAR is the gold standard for clinical escalation in the NHS. It ensures clear, structured communication of critical information: what's happening (Situation), relevant history (Background), your clinical assessment (Assessment), and what you think should be done (Recommendation)."
+    rationale: "Correct! **SBAR** is the NHS gold standard for clinical escalation.\n\n**NHS England Patient Safety** mandates SBAR for structured communication: **S**ituation (what's happening now), **B**ackground (relevant clinical history), **A**ssessment (your clinical findings/interpretation), **R**ecommendation (what you think should be done).\n\nSBAR reduces communication errors that contribute to adverse events. Originally developed by the US military, it's been widely adopted across NHS trusts to improve patient safety, particularly for phone communications and handovers.\n\n**NHS Implementation Guide** provides training toolkits for SBAR.\n\n**Reference:** NHS England SBAR Communication Tool; NHS Patient Safety Framework; systematic review (2018) showing moderate evidence for improved patient safety"
   },
   {
     module: "Module 2: Communication",
@@ -198,7 +200,7 @@ export const mockScenarios: Scenario[] = [
       D: "Provide a medical textbook for them to read."
     },
     correct_answer: "B",
-    rationale: "Excellent! Using plain English and checking understanding with the 'teach-back' method ensures effective communication. Patients and families have the right to understand their care in accessible language. This approach demonstrates patient-centered communication."
+    rationale: "Excellent! Using plain English and the 'teach-back' method ensures effective communication.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"give information patients can understand—provide information in a way patients want or need, in understandable language.\"\n\n**The Teach-Back Method** (endorsed by AHRQ and NHS) involves asking patients to repeat information in their own words. Studies show 50% of patients leave medical visits without understanding what physicians told them, and 40-80% of information is immediately forgotten.\n\n**NHS Accessible Information Standard** mandates communication in accessible formats.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; Agency for Healthcare Research and Quality (AHRQ) Health Literacy Toolkit; NHS Accessible Information Standard"
   },
   {
     module: "Module 2: Communication",
@@ -213,7 +215,7 @@ export const mockScenarios: Scenario[] = [
       D: "I'm not entirely happy with your service."
     },
     correct_answer: "C",
-    rationale: "Excellent! This demonstrates clear, professional assertiveness. You state: what you need, when you need it, why it's urgent, and the clinical context. This approach is firm but respectful, focusing on patient safety rather than personal authority."
+    rationale: "Excellent! This demonstrates clear, professional assertiveness.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires \"communicate clearly\" while treating colleagues with \"kindness, courtesy and respect.\"\n\nYou state: what you need, when you need it, why it's urgent, and the clinical context. This approach is firm but respectful, focusing on patient safety rather than personal authority. It provides the lab technician with essential clinical context to prioritize appropriately.\n\n**NHS Communication Standards** emphasize assertive communication that balances respect with clarity.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2 and Domain 3; NHS Leadership Academy - Assertive Communication Skills"
   },
   {
     module: "Module 2: Communication",
@@ -228,7 +230,7 @@ export const mockScenarios: Scenario[] = [
       D: "The colleague is suggesting you should show more respect to them."
     },
     correct_answer: "B",
-    rationale: "Correct! \"With respect\" is a polite British phrase that typically precedes a disagreement or challenge. Understanding these linguistic nuances helps you respond appropriately and maintain professional relationships when your ideas are being questioned."
+    rationale: "Correct! \"With respect\" is a polite British phrase that typically precedes a disagreement or challenge.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires understanding effective communication patterns and recognizing that \"communicate clearly and work effectively with colleagues.\"\n\nUnderstanding these linguistic nuances helps you respond appropriately and maintain professional relationships when your ideas are being questioned. This indirect communication style maintains collegiality while allowing robust clinical discussion.\n\n**NHS Communication Culture** values respectful challenge as part of effective MDT functioning.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2: Patients, Partnership and Communication; Domain 3: Colleagues, Culture and Safety"
   },
   {
     module: "Module 2: Communication",
@@ -243,7 +245,7 @@ export const mockScenarios: Scenario[] = [
       D: "Call the Consultant back in 30 minutes to confirm the instruction."
     },
     correct_answer: "C",
-    rationale: "Excellent! This demonstrates professional assertiveness and clarity-seeking. Vague instructions like 'keep an eye on' or 'not entirely happy' can lead to missed deterioration or unnecessary escalations. Asking for specific parameters ensures patient safety and appropriate escalation."
+    rationale: "Excellent! This demonstrates professional assertiveness and clarity-seeking.\n\n**GMC Good Medical Practice 2024 - Domain 1** requires you to \"be honest about your knowledge and experience\" and \"ask for help when you need it.\"\n\nVague instructions like 'keep an eye on' or 'not entirely happy' can lead to missed deterioration or unnecessary escalations. Asking for specific parameters (e.g., vital signs thresholds) ensures patient safety and appropriate escalation.\n\n**NHS Patient Safety** emphasizes clear communication prevents adverse events.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 1: Knowledge, Skills and Performance; Domain 2: Patients, Partnership and Communication; National Patient Safety Agency (NPSA) Safe Handover Guidelines"
   },
   {
     module: "Module 2: Communication",
@@ -258,7 +260,7 @@ export const mockScenarios: Scenario[] = [
       D: "Tell the patient to stop using medical terms they don't understand."
     },
     correct_answer: "B",
-    rationale: "Excellent! This approach gently clarifies understanding without embarrassing the patient. It ensures you're both discussing the same symptoms and helps identify any misconceptions from online research that may affect the consultation."
+    rationale: "Excellent! This approach gently clarifies understanding without embarrassing the patient.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"listen to patients\" and \"recognize their knowledge and experience of their health.\" You must also \"give information patients can understand.\"\n\nThis ensures you're both discussing the same symptoms and helps identify misconceptions from online research that may affect the consultation. The teach-back approach frames it as checking shared understanding rather than testing the patient.\n\n**NHS Shared Decision Making** emphasizes collaborative clarification.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2: Patients, Partnership and Communication; AHRQ Health Literacy Toolkit"
   },
   {
     module: "Module 2: Communication",
@@ -273,7 +275,7 @@ export const mockScenarios: Scenario[] = [
       D: "A handwritten note left on the colleague's desk."
     },
     correct_answer: "C",
-    rationale: "Correct! Professional emails create documented trails essential for clinical governance and medico-legal protection. For non-urgent matters requiring detail, email allows the colleague to review and respond when appropriate, while maintaining a clear record of the communication."
+    rationale: "Correct! Professional emails create documented trails essential for clinical governance and medico-legal protection.\n\n**GMC Good Medical Practice 2024 - Domain 1** requires you to \"keep clear, accurate, and legible records\" and Domain 3 requires \"share all relevant information with colleagues involved in patients' care.\"\n\nFor non-urgent matters requiring detail, email allows the colleague to review and respond when appropriate, while maintaining a clear record of the communication. This supports continuity of care and professional accountability.\n\n**NHS Clinical Governance** emphasizes documented communication.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 1: Knowledge, Skills and Performance; Domain 3: Colleagues, Culture and Safety; NHS Records Management Code of Practice"
   },
   {
     module: "Module 2: Communication",
@@ -288,7 +290,7 @@ export const mockScenarios: Scenario[] = [
       D: "Give them a leaflet and assume they will read it later."
     },
     correct_answer: "C",
-    rationale: "Excellent! The teach-back method is the gold standard for confirming understanding. By framing it as checking your own explanation rather than testing the patient, you avoid embarrassment while ensuring they truly understand the regimen, reducing medication errors."
+    rationale: "Excellent! The **Teach-Back Method** is the gold standard for confirming understanding.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"support shared decision-making\" and \"give information patients can understand.\"\n\n**AHRQ (Agency for Healthcare Research and Quality)** evidence shows teach-back: improves disease knowledge and medication adherence, increases patient satisfaction, decreases hospital readmissions, and improves health outcomes. Only 12% of adults have proficient health literacy.\n\nBy framing it as checking YOUR explanation rather than testing the patient, you avoid embarrassment while ensuring true understanding, reducing medication errors.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; AHRQ Health Literacy Universal Precautions Toolkit; systematic reviews showing teach-back effectiveness"
   },
   {
     module: "Module 2: Communication",
@@ -303,7 +305,7 @@ export const mockScenarios: Scenario[] = [
       D: "I'm not entirely happy with your drug charting."
     },
     correct_answer: "B",
-    rationale: "Excellent! This approach maintains professional respect while encouraging learning. By framing it as a 'discrepancy' and asking them to review, you allow them to identify the error themselves, which promotes learning and maintains confidence while ensuring the error is corrected."
+    rationale: "Excellent! This approach maintains professional respect while encouraging learning.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires you to \"help create a culture that is respectful, fair, supportive, and compassionate\" and \"treat all colleagues with kindness, courtesy and respect.\"\n\nBy framing it as a 'discrepancy' and asking them to review, you allow them to identify the error themselves, which promotes learning and maintains confidence while ensuring correction. This avoids blame culture and encourages reflective practice.\n\n**NHS Just Culture** principles emphasize learning from errors rather than punishment.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3: Colleagues, Culture and Safety; NHS Patient Safety Strategy - Just Culture"
   },
 
   // MODULE 3: Patient-Facing Cultural Sensitivity and Ethical Practice (Scenarios 21-30)
@@ -320,7 +322,7 @@ export const mockScenarios: Scenario[] = [
       D: "You should advise her to wait until she is 16."
     },
     correct_answer: "C",
-    rationale: "Excellent! This is the correct application of Gillick Competence and UK law. If she demonstrates sufficient maturity and understanding, she can legally consent without parental knowledge. Your duty is to the patient, not the family, ensuring her autonomy and safety."
+    rationale: "Excellent! This is the correct application of **Gillick Competence** and UK law.\n\n**Gillick v West Norfolk (1985)** established that children under 16 can consent to medical treatment if they have \"sufficient maturity and understanding.\" **Fraser Guidelines** (from the same case) apply specifically to contraception and sexual health.\n\n**GMC 0-18 Years: Guidance for Doctors** states you can provide contraception if the young person: (1) understands the advice, (2) cannot be persuaded to inform parents, (3) is very likely to continue having sexual intercourse, (4) their physical or mental health will suffer without treatment, and (5) it's in their best interests.\n\nYour duty is to the patient, not the family. Under-16s should be encouraged to inform parents, but if they meet Gillick competence and Fraser criteria, confidentiality must be maintained.\n\n**Reference:** Gillick v West Norfolk (1985); GMC 0-18 Years: Guidance for All Doctors; Fraser Guidelines; NSPCC Gillick Competence Guidance"
   },
   {
     module: "Module 3: Patient Sensitivity",
@@ -335,295 +337,303 @@ export const mockScenarios: Scenario[] = [
       D: "Ask the patient to clarify their gender identity and legal name."
     },
     correct_answer: "C",
-    rationale: "Correct! A brief, sincere apology followed by immediate correction shows respect and professionalism. Making a genuine mistake is human; how you respond demonstrates your commitment to patient-centered care and respect for identity."
+    rationale: "Correct! Immediately apologize briefly, correct yourself, and move forward.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"treat patients with kindness, courtesy and respect\" and \"respect patients' dignity and privacy.\"\n\n**Equality Act 2010** protects against discrimination based on gender reassignment. Using incorrect pronouns can cause significant distress and demonstrates lack of respect for patient identity.\n\nA brief, sincere apology acknowledges the error without making the patient responsible for educating you. Dwelling on the mistake or over-apologizing can make the patient more uncomfortable.\n\n**NHS Rainbow Badge Initiative** promotes inclusive care for LGBTQ+ patients.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; Equality Act 2010; GMC Trans Healthcare Guidance; NHS Rainbow Badge Standards"
   },
   {
     module: "Module 3: Patient Sensitivity",
     moduleNumber: 3,
-    scenario_title: "Conscientious Objection - Abortion",
-    scenario_text: "A patient requests a referral for an abortion. You have a deeply held personal and religious objection to abortion.",
-    question: "According to GMC guidance on conscientious objection, what is your professional duty?",
+    scenario_title: "Capacity and Cultural Pressure",
+    scenario_text: "A 70-year-old woman from a traditional background requires a potentially life-saving blood transfusion. Her adult son insists she would refuse it for religious reasons. The patient is conscious but appears passive and defers all questions to her son.",
+    question: "What is your primary legal and ethical duty under the Mental Capacity Act 2005?",
     options: {
-      A: "You must refuse the referral and explain your personal reasons to the patient.",
-      B: "You must refer the patient to a colleague who can provide the service without delay or judgment.",
-      C: "You must try to persuade the patient to consider alternatives before referring them.",
-      D: "You must inform the patient that abortion is illegal in your home country."
+      A: "Accept the son's statement and document his refusal on behalf of his mother.",
+      B: "Assess the patient's mental capacity directly, provide information in a way she understands, and document her own decision, regardless of family pressure.",
+      C: "Seek the agreement of all family members before proceeding.",
+      D: "Apply for a court order to override the family's wishes."
     },
     correct_answer: "B",
-    rationale: "Correct! GMC guidance allows conscientious objection but requires you to ensure the patient receives timely care from another doctor. Your personal beliefs must not delay or obstruct the patient's access to legal healthcare services."
+    rationale: "Correct! You must assess the patient's capacity directly.\n\n**Mental Capacity Act 2005** presumes adults have capacity unless proven otherwise. You must:\n1. Assess capacity for this specific decision\n2. Provide information in accessible formats\n3. Take all reasonable steps to help her make a decision\n4. Respect HER autonomous decision, not the family's wishes\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"respect patients' right to reach their own decisions\" and \"not discriminate unfairly against patients.\"\n\nFamily members cannot make decisions for capacitous adults. If she has capacity and refuses, you must respect that. If she lacks capacity, the decision must be made in her best interests (which may include family views but not family control).\n\n**Reference:** Mental Capacity Act 2005; GMC Decision Making and Consent Guidance; GMC Good Medical Practice 2024, Domain 2"
   },
   {
     module: "Module 3: Patient Sensitivity",
     moduleNumber: 3,
-    scenario_title: "Family Pressure and Confidentiality",
-    scenario_text: "The husband of a 35-year-old female patient demands to know the results of her recent sexual health screen, stating, \"In our culture, the husband has a right to know.\" The patient has not consented to the disclosure.",
-    question: "What is your primary duty regarding patient information?",
+    scenario_title: "Religious Accommodation",
+    scenario_text: "A Muslim patient asks if their consultation can be delayed by 10 minutes so they can complete their afternoon prayer. The clinic is running 30 minutes behind schedule.",
+    question: "What is the most appropriate response that balances patient respect with service delivery?",
     options: {
-      A: "Disclose the results to the husband to respect his cultural role.",
-      B: "Refuse to disclose the results, citing the patient's absolute right to confidentiality and autonomy in the UK.",
-      C: "Ask the patient if she would like you to disclose the results to her husband.",
-      D: "Only disclose the results if the husband threatens to involve the hospital management."
+      A: "Refuse politely, explaining that the clinic is already behind schedule and religious practices cannot be accommodated.",
+      B: "Agree immediately and reschedule their appointment to the end of the clinic.",
+      C: "Offer them the option to complete their prayer now and be seen next, or be seen immediately, respecting their choice.",
+      D: "Tell them they should have planned their appointment around their prayer times."
     },
-    correct_answer: "B",
-    rationale: "Excellent! Patient confidentiality is absolute in the UK unless there are safeguarding concerns. The patient's autonomy overrides cultural expectations. Disclosing without consent would be a serious breach of professional duty and potentially put the patient at risk."
+    correct_answer: "C",
+    rationale: "Correct! Offer choice and respect their decision.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"treat patients with kindness, courtesy and respect\" and \"respect patients' dignity and privacy.\"\n\n**Equality Act 2010** requires reasonable adjustments for religious practice. **NHS Constitution** emphasizes respect for \"human rights, privacy and dignity.\"\n\nOffering the choice acknowledges their needs while being transparent about clinic constraints. A 10-minute delay may be manageable; if not, seeing them next in the queue is a reasonable accommodation. The key is respecting their autonomy to choose.\n\n**NHS Chaplaincy Guidelines** support facilitating religious practice where reasonable.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; Equality Act 2010; NHS Constitution; NHS Chaplaincy and Spiritual Care Guidelines"
   },
   {
     module: "Module 3: Patient Sensitivity",
     moduleNumber: 3,
-    scenario_title: "Non-Judgmental Care",
-    scenario_text: "You are consulting with a patient who admits to heavy alcohol use and drug misuse. You feel personally judgmental of their lifestyle choices.",
-    question: "How must you ensure your personal feelings do not compromise the consultation?",
+    scenario_title: "Cultural Beliefs About Diagnosis",
+    scenario_text: "You diagnose a patient with Type 2 Diabetes. The patient's family insists the illness is caused by \"evil eye\" and want to consult a traditional healer before starting medication. The patient's HbA1c is 75 mmol/mol (9%).",
+    question: "What is the most appropriate response that respects cultural beliefs while ensuring medical safety?",
     options: {
-      A: "Briefly express your disapproval to encourage them to change their behavior.",
-      B: "Maintain a professional, non-judgmental demeanor and focus solely on providing evidence-based medical advice and support.",
-      C: "Refer the patient to a colleague who specializes in addiction, as you cannot provide unbiased care.",
-      D: "Document your personal concerns about their moral character in the patient's notes."
+      A: "Refuse to discharge the patient until they agree to start medication immediately.",
+      B: "Explain that while you respect their beliefs, diabetes requires medical treatment. Offer to work alongside their traditional healer and arrange close follow-up.",
+      C: "Tell them that traditional healers are not evidence-based and they must choose between the two approaches.",
+      D: "Discharge them with no follow-up, respecting their autonomous decision to seek traditional healing."
     },
     correct_answer: "B",
-    rationale: "Excellent! Non-judgmental care is fundamental to the doctor-patient relationship. Your role is to provide evidence-based medical care and support, not to judge lifestyle choices. Judgment creates barriers to honest communication and undermines trust."
+    rationale: "Excellent! This demonstrates cultural competence while ensuring patient safety.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"respect patients' dignity and privacy\" and \"support shared decision-making\" while also ensuring you \"provide effective treatments based on the best available evidence.\"\n\n**NHS Constitution** values \"respect and dignity\" and recognizes patients' rights to be \"involved in discussions and decisions about their healthcare.\"\n\nAcknowledging cultural beliefs doesn't mean abandoning evidence-based medicine. Working alongside traditional practices (where safe) while arranging close monitoring demonstrates respect and maintains therapeutic relationship. HbA1c of 75 requires treatment but isn't immediately life-threatening, allowing time for negotiation.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; NHS Constitution; NICE Type 2 Diabetes Guideline NG28"
   },
   {
     module: "Module 3: Patient Sensitivity",
     moduleNumber: 3,
-    scenario_title: "The Patient's Choice",
-    scenario_text: "A patient with a terminal illness chooses to refuse chemotherapy, a decision you believe is medically irrational and will shorten their life. The patient is mentally competent.",
-    question: "What is the doctor's role in this situation, based on UK principles of autonomy?",
+    scenario_title: "Interpreter Services",
+    scenario_text: "A patient who speaks limited English attends with her 10-year-old daughter, who offers to interpret. The consultation concerns potential cervical cancer and requires discussion of intimate symptoms.",
+    question: "What is the most appropriate action regarding interpretation for this sensitive consultation?",
     options: {
-      A: "You must override the patient's decision, as your duty is to prolong life.",
-      B: "You must respect the patient's autonomous decision, ensuring they have been fully informed of the risks and benefits.",
-      C: "You should involve the patient's family to convince them to accept treatment.",
-      D: "You should seek a second medical opinion to confirm the patient's competence."
+      A: "Accept the daughter's offer, as she is immediately available and the patient trusts her.",
+      B: "Decline the daughter's offer and arrange a professional telephone or video interpreter for this consultation.",
+      C: "Proceed with the consultation using simple gestures and diagrams, avoiding the need for interpretation.",
+      D: "Ask a receptionist who speaks the patient's language to interpret."
     },
     correct_answer: "B",
-    rationale: "Correct! Autonomy is a fundamental principle in UK medical ethics. A competent patient has the absolute right to refuse treatment, even if that decision may shorten their life. Your role is to ensure informed consent, not to override their choice."
+    rationale: "Correct! You must arrange a professional interpreter for sensitive consultations.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"give information patients can understand\" and \"communicate sensitively.\"\n\n**NHS Accessible Information Standard** mandates provision of professional interpreters. Using children as interpreters is inappropriate because:\n1. It reverses family roles and can be psychologically harmful\n2. Children may lack medical vocabulary\n3. Patients may withhold sensitive information\n4. Accuracy cannot be assured\n5. Safeguarding concerns may be missed\n6. Consent validity is compromised\n\n**Language Line** and video interpreting services are available 24/7 for NHS consultations.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; NHS Accessible Information Standard; Royal College of General Practitioners - Professional Interpreters Guidance"
   },
   {
     module: "Module 3: Patient Sensitivity",
     moduleNumber: 3,
-    scenario_title: "Cultural Interpreter",
-    scenario_text: "A patient speaks very little English. Their 12-year-old child offers to translate the medical consultation.",
-    question: "What is the appropriate action regarding the use of interpreters?",
+    scenario_title: "End of Life Cultural Practices",
+    scenario_text: "A terminally ill patient's family from a Hindu background requests that the patient's bed be moved to face east and that they be allowed to play religious music and perform rituals around the bedside. The patient is unconscious.",
+    question: "How should you respond to this request to provide culturally sensitive end-of-life care?",
     options: {
-      A: "Allow the child to translate, as they are the most readily available option.",
-      B: "Use a professional, trained medical interpreter (in-person or telephone) to ensure accuracy and maintain confidentiality.",
-      C: "Use a family member, as they understand the patient's background best.",
-      D: "Speak slowly and loudly in English until the patient understands."
+      A: "Refuse, as the patient is unconscious and cannot express their wishes, and the rituals may disturb other patients.",
+      B: "Facilitate the requests where practically possible, such as repositioning the bed and allowing quiet music, while balancing other patients' needs.",
+      C: "Tell the family that NHS facilities cannot accommodate religious practices and suggest they transfer the patient home.",
+      D: "Allow the family to perform rituals only outside visiting hours."
     },
     correct_answer: "B",
-    rationale: "Excellent! Professional interpreters ensure accurate communication and maintain confidentiality. Using children places inappropriate burden on them and may result in inaccurate translation or breaches of confidentiality, particularly for sensitive topics."
+    rationale: "Excellent! Facilitate cultural practices where practically possible.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to \"treat patients with kindness, courtesy and respect\" and \"respect patients' dignity and privacy.\"\n\n**NHS Constitution** guarantees \"respect for human rights, privacy and dignity\" and \"patients will be treated with dignity and respect, in accordance with their human rights.\"\n\nEnd-of-life care should accommodate cultural and religious practices where feasible. Repositioning a bed and allowing quiet music are reasonable adjustments. If practices conflict with other patients' wellbeing, creative solutions (e.g., side room, designated times) should be explored.\n\n**Leadership Alliance for the Care of Dying People** emphasizes individual preferences in end-of-life care.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; NHS Constitution; Leadership Alliance for the Care of Dying People - Five Priorities of Care"
   },
   {
     module: "Module 3: Patient Sensitivity",
     moduleNumber: 3,
-    scenario_title: "Confidentiality and Self-Harm",
-    scenario_text: "A 17-year-old patient confides in you that they are having thoughts of self-harm but makes you promise not to tell anyone.",
-    question: "What is the ethical boundary you must navigate?",
+    scenario_title: "Female Genital Mutilation Disclosure",
+    scenario_text: "During a postnatal check, you notice signs consistent with Female Genital Mutilation (FGM) Type 3 on a 25-year-old woman. She becomes distressed when you mention it and begs you not to involve authorities, stating it was done in her home country when she was a child.",
+    question: "What is your legal and professional obligation in this situation?",
     options: {
-      A: "You must keep the promise, as confidentiality is absolute.",
-      B: "You must break confidentiality and share the information with the appropriate mental health team or senior colleague, as the duty to protect the patient from serious harm overrides confidentiality.",
-      C: "You should only tell the patient's parents.",
-      D: "You should document the promise and the self-harm thoughts, but take no further action."
+      A: "Respect her wishes and do not report it, as it happened abroad and as a child.",
+      B: "Report to the police immediately as FGM is a criminal offense, regardless of where it occurred.",
+      C: "Complete the mandatory FGM Enhanced Dataset report and offer support, but only report to police if you suspect a girl under 18 is at risk.",
+      D: "Refer her to a specialist FGM clinic but take no further action."
     },
-    correct_answer: "B",
-    rationale: "Correct! While confidentiality is normally paramount, the duty to protect a patient from serious harm overrides this. You must involve appropriate mental health services. Explain this to the patient sensitively, involving them in the process where possible."
+    correct_answer: "C",
+    rationale: "Correct! This is the proper application of UK FGM legislation and reporting requirements.\n\n**FGM Act 2003 (amended 2015)** makes FGM illegal in the UK, even if performed abroad. **Mandatory Reporting Duty** (since October 2015) requires healthcare professionals to report to police when they discover FGM in girls under 18.\n\nFor adult survivors:\n1. Complete **FGM Enhanced Dataset** (mandatory recording in NHS)\n2. Offer specialist support and referral\n3. Assess safeguarding risk to any daughters/girls in household\n4. Only report to police if you believe a girl under 18 is at risk\n\n**GMC Protecting Children and Young People** requires you to protect children from harm while respecting adult patients' confidentiality where no child protection concerns exist.\n\n**Reference:** FGM Act 2003; Serious Crime Act 2015; GMC Protecting Children and Young People; NHS FGM Enhanced Dataset; Home Office Multi-Agency Statutory Guidance on FGM"
   },
   {
     module: "Module 3: Patient Sensitivity",
     moduleNumber: 3,
-    scenario_title: "The Religious Request",
-    scenario_text: "A patient from a conservative background requests a male-only care team for a procedure, even though the only available doctor is female.",
-    question: "How should you handle this request?",
+    scenario_title: "Chaperone for Intimate Examination",
+    scenario_text: "You need to perform an intimate examination on a patient. The patient is from a culture where opposite-gender healthcare providers are uncommon. They appear uncomfortable but haven't explicitly refused.",
+    question: "What is the most appropriate approach to ensure consent and patient comfort?",
     options: {
-      A: "Refuse the request, stating that gender is irrelevant in the NHS.",
-      B: "Attempt to accommodate the request by finding a male colleague, but explain that patient safety and clinical urgency take priority over gender preference.",
-      C: "Insist the patient accepts the female doctor or delays the procedure.",
-      D: "Document the refusal and proceed with the female doctor."
+      A: "Proceed with the examination, as they haven't explicitly refused and it's clinically necessary.",
+      B: "Ask if they would prefer a same-gender doctor and offer a chaperone, explaining they can decline the examination or request a same-gender clinician for a future appointment.",
+      C: "Insist on performing the examination yourself, as rebooking would delay diagnosis.",
+      D: "Perform the examination with a chaperone present but don't discuss the patient's discomfort."
     },
     correct_answer: "B",
-    rationale: "Correct! The NHS seeks to accommodate cultural and religious preferences where possible, but patient safety is paramount. Making reasonable efforts to find a male colleague shows cultural sensitivity, while being clear about clinical priorities maintains professional standards."
+    rationale: "Excellent! Offer choice, explain rights, and respect preferences.\n\n**GMC Intimate Examinations and Chaperones Guidance** requires you to:\n1. Explain why examination is necessary\n2. Obtain informed consent\n3. Offer a chaperone (and document if declined)\n4. Recognize that patients have the right to decline or request a same-gender clinician\n\n**GMC Good Medical Practice 2024 - Domain 2** requires \"respect patients' dignity and privacy\" and \"support shared decision-making.\"\n\nNon-verbal discomfort is important. Silence ≠ consent. Offering alternatives shows cultural sensitivity while maintaining professional standards. For non-urgent examinations, arranging a same-gender clinician is reasonable.\n\n**Reference:** GMC Intimate Examinations and Chaperones (2013); GMC Good Medical Practice 2024, Domain 2; GMC Decision Making and Consent"
   },
   {
     module: "Module 3: Patient Sensitivity",
     moduleNumber: 3,
-    scenario_title: "The Patient's Lifestyle",
-    scenario_text: "A patient with Type 2 Diabetes continues to eat an unhealthy diet despite repeated advice. You feel frustrated by their lack of compliance.",
-    question: "How should you approach the next consultation, maintaining a non-judgmental, patient-centered approach?",
+    scenario_title: "Advance Decision to Refuse Treatment",
+    scenario_text: "A Jehovah's Witness patient is admitted unconscious following a car accident with severe hemorrhage. You find a valid Advance Decision to Refuse Treatment (ADRT) card in their wallet refusing blood transfusions under all circumstances, even if life-threatening.",
+    question: "What is your legal obligation under the Mental Capacity Act 2005?",
     options: {
-      A: "Express your frustration and tell them they are wasting NHS resources.",
-      B: "Focus on understanding the barriers to their compliance (e.g., cultural foods, financial issues, mental health) and explore small, achievable changes together.",
-      C: "Discharge them from your care due to non-compliance.",
-      D: "Simply repeat the same dietary advice more forcefully."
+      A: "Override the ADRT as the situation is life-threatening and the patient cannot currently confirm their wishes.",
+      B: "Respect the valid ADRT and provide alternative treatments (e.g., cell salvage, volume expanders) but not blood products.",
+      C: "Contact the family to see if they agree with the ADRT before making a decision.",
+      D: "Apply for an emergency court order to override the ADRT."
     },
     correct_answer: "B",
-    rationale: "Excellent! This demonstrates motivational interviewing and patient-centered care. Understanding barriers (financial, cultural, psychological) allows you to work collaboratively on realistic goals. Judgment and frustration damage the therapeutic relationship and reduce compliance further."
+    rationale: "Correct! A valid and applicable ADRT must be respected.\n\n**Mental Capacity Act 2005 Section 24-26** gives legal force to valid Advance Decisions to Refuse Treatment. An ADRT is valid if:\n1. The person was 18+ and had capacity when they made it\n2. It hasn't been withdrawn\n3. The person hasn't done anything inconsistent with it\n4. It's applicable to the current circumstances\n\nJehovah's Witness ADRT cards are typically specific and legally binding. **GMC Treatment and Care Towards the End of Life** requires you to respect advance refusals of treatment.\n\nYou must provide alternative treatments where possible. Family cannot override a valid ADRT. Courts have consistently upheld these decisions even when they result in death.\n\n**Reference:** Mental Capacity Act 2005 Sections 24-26; GMC Treatment and Care Towards the End of Life; GMC Decision Making and Consent; Re T (Adult: Refusal of Treatment) [1993]"
   },
 
-  // MODULE 4: Professional Integration and Resilience (Scenarios 31-40)
+  // MODULE 4: Professional Integration: Regulation, Conduct, and Organizational Culture (Scenarios 31-40)
   {
     module: "Module 4: Professional Integration",
     moduleNumber: 4,
-    scenario_title: "Social Media and Patient Confidentiality",
-    scenario_text: "You are scrolling through a private social media group for doctors and see a colleague post a picture of a funny, but non-identifiable, X-ray with a caption that mocks the patient's injury.",
-    question: "According to GMC guidance, what is your professional duty?",
+    scenario_title: "Social Media Confidentiality",
+    scenario_text: "During lunch, you take a photo of an interesting X-ray to share in a private WhatsApp group of medical students for educational purposes. You crop the image to remove the patient's name, but you mention the patient's age and which ward they are on.",
+    question: "Does this breach GMC guidance on confidentiality and social media?",
     options: {
-      A: "Ignore it, as it is in a private group and the patient is not identifiable.",
-      B: "Like the post, as it is a common way to vent stress.",
-      C: "Immediately report the post and the colleague to a senior manager or the GMC, as it breaches professional standards and undermines public trust.",
-      D: "Send a private message to the colleague asking them to take it down."
+      A: "No, because the image is anonymized and the group is private.",
+      B: "No, because it's for educational purposes.",
+      C: "Yes, this breaches confidentiality because the patient could potentially be identified from the combination of details, and private groups are not secure.",
+      D: "No, as long as you don't mention the patient's name."
     },
     correct_answer: "C",
-    rationale: "Correct! Even in private groups, mocking patients breaches GMC standards of professionalism and undermines public trust in doctors. You have a professional duty to report this serious breach, which protects both patients and the profession's reputation."
+    rationale: "Correct! This is a clear breach of confidentiality.\n\n**GMC Social Media Guidance** states:\n1. You must not disclose identifiable patient information via social media\n2. **Private groups are NOT secure** - information can be shared beyond the group\n3. Although individual details may not breach confidentiality alone, **the sum of information** (age + ward + clinical image) could identify the patient\n4. Professional standards apply online just as they do offline\n\n**GMC Confidentiality Guidance** requires explicit patient consent before using information for educational purposes.\n\n**GMC Good Medical Practice 2024 - Domain 4 (Safety and Quality)** requires you to \"protect information about patients and colleagues.\"\n\nSerious or persistent failure to follow GMC guidance puts your registration at risk. Additionally, breaches could lead to civil claims or ICO complaints.\n\n**Reference:** GMC Using Social Media as a Medical Professional; GMC Confidentiality: Good Practice in Handling Patient Information; GMC Good Medical Practice 2024, Domain 4; Information Commissioner's Office (ICO) Guidance"
   },
   {
     module: "Module 4: Professional Integration",
     moduleNumber: 4,
-    scenario_title: "Incident Reporting - Datix",
-    scenario_text: "You accidentally prescribe a drug to a patient who is allergic to it, but the nurse catches the error before the drug is administered.",
-    question: "What is the correct action to take regarding this near-miss incident?",
+    scenario_title: "Duty of Candour",
+    scenario_text: "You accidentally prescribe 10 times the correct dose of a medication due to a decimal point error. The error is caught by the pharmacist before the medication is administered. No harm came to the patient.",
+    question: "What is your professional obligation under the Duty of Candour and GMC guidance?",
     options: {
-      A: "Do nothing, as no harm occurred, and you don't want a black mark on your record.",
-      B: "Apologize to the nurse and the patient, and move on.",
-      C: "Immediately report the incident using the local system (e.g., Datix), as it is a crucial part of clinical governance and system learning.",
-      D: "Only report it if the nurse insists."
-    },
-    correct_answer: "C",
-    rationale: "Excellent! Reporting near-misses is essential for system learning and preventing future errors. The NHS has a non-punitive incident reporting culture designed to identify system weaknesses. Reporting demonstrates professionalism and commitment to patient safety."
-  },
-  {
-    module: "Module 4: Professional Integration",
-    moduleNumber: 4,
-    scenario_title: "Rota Breach and Working Hours",
-    scenario_text: "You realize your current rota requires you to work 50 hours straight without the mandatory rest breaks required by the European Working Time Directive (EWTD).",
-    question: "What is the most professional and appropriate way to address this rota breach?",
-    options: {
-      A: "Work the shift and complain to your colleagues afterward.",
-      B: "Refuse to work the shift and leave the hospital.",
-      C: "Document the breach and professionally raise the issue with the Rota Coordinator or your Educational Supervisor, citing the EWTD and patient safety concerns.",
-      D: "Call in sick for the next shift to compensate for the lost rest."
-    },
-    correct_answer: "C",
-    rationale: "Correct! Professionally escalating rota breaches protects both your wellbeing and patient safety. Documenting and raising concerns through proper channels demonstrates professional responsibility and contributes to systemic improvement."
-  },
-  {
-    module: "Module 4: Professional Integration",
-    moduleNumber: 4,
-    scenario_title: "Professional Boundaries",
-    scenario_text: "A patient you have been treating for three months, who is now discharged, sends you a friend request on a personal social media platform.",
-    question: "What is the appropriate response according to GMC guidance on professional boundaries?",
-    options: {
-      A: "Accept the request, as they are no longer your patient.",
-      B: "Accept the request but set your profile to private.",
-      C: "Decline the request, as maintaining a clear professional boundary is essential for trust and preventing future complications.",
-      D: "Accept the request and send them a private message explaining the rules."
-    },
-    correct_answer: "C",
-    rationale: "Correct! GMC guidance is clear that professional boundaries must be maintained even after the doctor-patient relationship has ended. Accepting social media requests blurs these boundaries and can lead to complications that undermine professionalism and trust."
-  },
-  {
-    module: "Module 4: Professional Integration",
-    moduleNumber: 4,
-    scenario_title: "Seeking Support for Stress",
-    scenario_text: "You are feeling overwhelmed, isolated, and are making minor clinical errors due to fatigue and stress. You are worried that seeking help will be seen as a sign of weakness and jeopardize your career.",
-    question: "What is the NHS cultural expectation regarding a doctor's wellbeing?",
-    options: {
-      A: "You must hide your stress and work harder to prove your resilience.",
-      B: "You have a professional duty to seek help from services like the NHS Practitioner Health Programme or Occupational Health to ensure your fitness to practice.",
-      C: "You should only take a few days off and hope the stress passes.",
-      D: "You should confide only in your family back home."
+      A: "No need to tell the patient, as no harm occurred and the error was caught.",
+      B: "You must inform the patient about the error, apologize, explain what happened, and document the incident.",
+      C: "Only inform your supervisor but not the patient, as it might damage trust.",
+      D: "Document the error in the notes but don't discuss it with the patient unless they ask."
     },
     correct_answer: "B",
-    rationale: "Excellent! Seeking help is a professional duty, not weakness. The NHS provides confidential support services specifically for doctors. Recognizing when you need help and accessing support demonstrates professionalism and protects both you and your patients."
+    rationale: "Correct! You must be open and honest with the patient.\n\n**GMC Good Medical Practice 2024 - Domain 4** requires you to \"be open and honest when things go wrong\" and states:\n1. You must inform patients promptly about anything that has gone wrong\n2. You must apologize\n3. You must explain the short and long-term effects\n4. You must tell patients about their right to seek further information\n\n**Professional Duty of Candour** (Health and Social Care Act 2008, Regulation 20) is a legal requirement for NHS organizations. **GMC Openness and Honesty When Things Go Wrong** applies to individual doctors.\n\nBeing open about errors—even near misses—maintains trust, allows patients to monitor for late effects, and demonstrates professional integrity. Apologizing does NOT constitute legal admission of liability.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 4; GMC Openness and Honesty When Things Go Wrong; Health and Social Care Act 2008 (Regulated Activities) Regulations 2014, Regulation 20"
   },
   {
     module: "Module 4: Professional Integration",
     moduleNumber: 4,
-    scenario_title: "Clinical Audit and CPD",
-    scenario_text: "Your department is running a mandatory clinical audit on antibiotic prescribing. You view this as unnecessary administrative work that takes time away from clinical duties.",
-    question: "What is the purpose of mandatory clinical audit in the NHS?",
+    scenario_title: "Raising Concerns About a Colleague",
+    scenario_text: "You notice a colleague has alcohol on their breath during an afternoon shift. They appear to be functioning normally, but you are concerned.",
+    question: "What is your professional and ethical obligation under GMC guidance?",
     options: {
-      A: "To create extra work for junior doctors.",
-      B: "To test your knowledge of antibiotics.",
-      C: "It is a core component of Continuous Professional Development (CPD) and Clinical Governance, ensuring the quality of care meets national standards.",
-      D: "It is a way for the hospital to save money on medication."
+      A: "Ignore it unless you see evidence of patient harm, as you don't want to damage their career.",
+      B: "Confront the colleague immediately in front of other staff members.",
+      C: "Raise your concern with an appropriate person (e.g., clinical supervisor, occupational health) following local procedures, as you have a duty to protect patients.",
+      D: "Monitor the colleague closely over the next few weeks to see if it happens again before taking action."
     },
     correct_answer: "C",
-    rationale: "Correct! Clinical audit is fundamental to evidence-based practice and continuous quality improvement. It ensures care meets standards, identifies areas for improvement, and demonstrates your commitment to professional development and patient safety."
+    rationale: "Correct! You must raise this concern promptly through appropriate channels.\n\n**GMC Good Medical Practice 2024 - Domain 3** requires you to:\n1. \"Be compassionate towards colleagues who have problems with their performance or health\"\n2. **BUT** \"must put patient safety first at all times\"\n3. \"You must raise a concern if you have reason to believe that patient safety may be compromised by a colleague's conduct, health or performance\"\n\n**GMC Raising and Acting on Concerns About Patient Safety** provides clear guidance:\n- You have a professional duty to act, not wait for patient harm\n- Raise concerns through local procedures (clinical supervisor, medical director, Freedom to Speak Up Guardian)\n- The colleague may need occupational health support, not punishment\n\n**NHS Freedom to Speak Up** protects those who raise concerns.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 3; GMC Raising and Acting on Concerns About Patient Safety; NHS Freedom to Speak Up Framework; Public Interest Disclosure Act 1998"
   },
   {
     module: "Module 4: Professional Integration",
     moduleNumber: 4,
-    scenario_title: "The Duty to Report a Colleague",
-    scenario_text: "You witness a colleague consistently arriving late, smelling of alcohol, and making questionable clinical decisions. You are friends with this colleague.",
-    question: "What is your primary duty in this situation?",
+    scenario_title: "Maintaining Professional Boundaries",
+    scenario_text: "A patient you treated in the emergency department sends you a friend request on Facebook. You provided excellent care, and the patient has now been discharged with no ongoing care relationship.",
+    question: "What is the most appropriate response according to GMC guidance on professional boundaries?",
     options: {
-      A: "Cover for your friend and advise them privately to seek help.",
-      B: "Your duty to protect patients overrides your loyalty to your colleague; you must report your concerns to a senior doctor or the GMC.",
-      C: "Wait until the colleague makes a serious error that harms a patient.",
-      D: "Tell the nurse in charge to keep an eye on them."
+      A: "Accept the request, as there is no ongoing clinical relationship and you want to maintain good patient relations.",
+      B: "Accept the request but adjust your privacy settings so they cannot see personal posts.",
+      C: "Decline or ignore the request, as accepting could blur professional boundaries even after the clinical relationship has ended.",
+      D: "Accept the request after waiting 6 months to ensure the clinical relationship is completely over."
+    },
+    correct_answer: "C",
+    rationale: "Correct! You should decline or ignore the friend request.\n\n**GMC Maintaining Professional Boundaries** (formerly Maintaining a Professional Boundary Between You and Your Patient) states:\n- You must not use your professional position to pursue a sexual or improper emotional relationship\n- **Social media blurs boundaries** between professional and personal life\n- Ending a professional relationship does not automatically make a personal relationship appropriate\n\n**GMC Social Media Guidance** states:\n- It is not appropriate to accept friend requests from patients\n- If contacted about care via private social media, direct them to appropriate professional channels\n- You cannot mix social and professional relationships\n\n**GMC Good Medical Practice 2024 - Domain 3** requires maintaining professional relationships that protect patient trust.\n\n**Reference:** GMC Maintaining Professional Boundaries with Patients; GMC Using Social Media as a Medical Professional; GMC Good Medical Practice 2024, Domain 3"
+  },
+  {
+    module: "Module 4: Professional Integration",
+    moduleNumber: 4,
+    scenario_title: "Consent for Medical Students",
+    scenario_text: "You are supervising a medical student on a ward round. A patient agrees to be examined \"by the doctor.\" The medical student begins the examination without explicitly identifying themselves as a student.",
+    question: "What is your responsibility regarding consent and professional honesty in this situation?",
+    options: {
+      A: "Allow it to continue, as the patient agreed to examination and students need to learn.",
+      B: "Immediately stop and ensure the patient understands the student's role and explicitly consents to student involvement.",
+      C: "Let the student continue but mention they're a student at the end of the examination.",
+      D: "It's the student's responsibility to identify themselves, not yours."
     },
     correct_answer: "B",
-    rationale: "Correct! Your primary duty is always to patient safety. While supporting colleagues is important, you must report concerns about fitness to practice through appropriate channels. This protects patients and may ultimately help your colleague get the support they need."
+    rationale: "Correct! You must ensure the patient understands who is involved in their care.\n\n**GMC Good Medical Practice 2024 - Domain 2** requires you to:\n1. \"Be honest and trustworthy in all communication with patients\"\n2. Ensure patients understand \"who is providing their care\"\n3. Obtain proper informed consent for any examination or procedure\n\n**GMC Consent Guidance** states patients must be informed about:\n- The roles of those providing care\n- The involvement of students or trainees\n- Their right to decline student involvement without affecting their care\n\nAs the supervising doctor, you share responsibility for ensuring proper consent. Deception (even by omission) breaches professional standards and undermines trust. Most patients are happy to help students learn when asked honestly.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 2; GMC Decision Making and Consent; GMC Responsibilities of Doctors in Management and Leadership Roles"
   },
   {
     module: "Module 4: Professional Integration",
     moduleNumber: 4,
-    scenario_title: "Appraisal and Feedback",
-    scenario_text: "You are preparing for your annual appraisal. You are used to a system where appraisals are purely formal and involve little self-reflection.",
-    question: "What is the key focus of the NHS appraisal process?",
+    scenario_title: "Fitness to Practise and Health Issues",
+    scenario_text: "You have been experiencing symptoms of depression for several months, affecting your concentration and sleep. You are managing to complete your work, but you are increasingly exhausted and making minor mistakes.",
+    question: "What is your professional obligation under GMC guidance regarding your own health?",
     options: {
-      A: "To determine your salary increase for the year.",
-      B: "To formally document your mistakes and disciplinary actions.",
-      C: "It is a mandatory process focused on self-reflection, professional development, and setting learning goals for the coming year.",
-      D: "It is a test of your clinical knowledge."
-    },
-    correct_answer: "C",
-    rationale: "Correct! NHS appraisal is a developmental process focused on reflective practice and professional growth. It's an opportunity to discuss achievements, challenges, and learning goals in a supportive environment, contributing to your ongoing professional development."
-  },
-  {
-    module: "Module 4: Professional Integration",
-    moduleNumber: 4,
-    scenario_title: "Using Hospital Resources",
-    scenario_text: "You need to print a large personal document (e.g., a visa application) and decide to use the hospital printer and paper late at night.",
-    question: "What ethical principle does this action violate?",
-    options: {
-      A: "Patient confidentiality, as the document is personal.",
-      B: "The principle of responsible use of NHS resources, as hospital property is for official use only.",
-      C: "The principle of professional boundaries.",
-      D: "No principle is violated, as the hospital has plenty of paper."
+      A: "Continue working as normal, as doctors are expected to cope with stress and the mistakes are minor.",
+      B: "Register with a GP, seek appropriate support, and consider whether you need time off or workplace adjustments, as your health is affecting your performance.",
+      C: "Wait until you make a serious mistake before seeking help.",
+      D: "Self-prescribe antidepressants to avoid taking time off."
     },
     correct_answer: "B",
-    rationale: "Correct! NHS resources are funded by taxpayers and must be used only for official purposes. Using hospital facilities for personal gain, however small, violates professional integrity and undermines public trust in the NHS."
+    rationale: "Correct! You must seek appropriate support when health issues affect your work.\n\n**GMC Good Medical Practice 2024 - Domain 4** requires you to:\n1. \"Be registered with a general practitioner (GP) outside your family\"\n2. \"Consult a suitably qualified colleague for advice and treatment if you are concerned about your own health\"\n3. \"Do not self-prescribe\"\n4. **\"You must protect patients from any risk posed by your health\"**\n\nDepression is common in doctors (~12% prevalence). Seeking help early prevents deterioration and protects patients. **NHS Practitioner Health Programme** provides confidential mental health support for doctors.\n\n**GMC Doctors' Health Guidance** emphasizes:\n- Your health matters - both for you and your patients\n- Early intervention prevents serious problems\n- Workplace adjustments or brief leave often help\n- Self-treatment is inadequate and unprofessional\n\n**Reference:** GMC Good Medical Practice 2024, Domain 4; GMC Doctors' Health; NHS Practitioner Health Programme; BMA Doctors' Wellbeing Resources"
   },
   {
     module: "Module 4: Professional Integration",
     moduleNumber: 4,
-    scenario_title: "Dealing with a Complaint",
-    scenario_text: "A patient files a formal complaint against you, which you believe is unfair and culturally motivated.",
-    question: "What is the correct first step in responding to the complaint?",
+    scenario_title: "Probity in Professional Practice",
+    scenario_text: "You are asked to complete a cremation form (Part 5) for a patient who died under the care of your consultant. You were not directly involved in the patient's care and have only briefly reviewed the notes.",
+    question: "What is the appropriate action to maintain probity according to GMC standards?",
     options: {
-      A: "Immediately contact the patient to argue your case and defend your actions.",
-      B: "Ignore the complaint, as you know you did nothing wrong.",
-      C: "Cooperate fully with the formal complaints procedure, seek advice from your medical defense organization, and respond professionally and factually.",
-      D: "File a counter-complaint against the patient for harassment."
+      A: "Complete the form quickly, as the family is waiting and you have reviewed the notes.",
+      B: "Decline to complete the form and explain that you must have personally examined the patient or been directly involved in their care to complete it accurately and honestly.",
+      C: "Ask a colleague to sign it using your name, as you are busy.",
+      D: "Complete the form but note at the bottom that you weren't directly involved."
+    },
+    correct_answer: "B",
+    rationale: "Correct! You must decline if you cannot complete the form honestly.\n\n**GMC Good Medical Practice 2024 - Domain 4** requires you to:\n1. **\"Be honest and trustworthy when writing reports, and when completing or signing forms, reports and other documents\"**\n2. \"You must make sure that any documents you write or sign are not false or misleading\"\n3. \"You must take reasonable steps to verify the information\"\n\n**GMC Probity Guidance** states:\n- You must not sign documents you have not completed yourself or cannot verify\n- Patients and the public must be able to trust doctors to be honest\n\n**Cremation Form 5** requires the certifying doctor to have personally cared for or examined the deceased. Falsifying this is a criminal offense under the Cremation (England and Wales) Regulations 2008 and could result in GMC sanctions.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 4; GMC Probity: Honesty in Professional Practice; Cremation (England and Wales) Regulations 2008"
+  },
+  {
+    module: "Module 4: Professional Integration",
+    moduleNumber: 4,
+    scenario_title: "Informed Financial Consent",
+    scenario_text: "A patient asks you to complete a private sick note for their employer. You plan to charge £25 for this service. The patient assumes it will be free as part of NHS care.",
+    question: "What is your obligation regarding financial transparency under GMC guidance?",
+    options: {
+      A: "Complete the form and send them an invoice afterward, as fees for private services are standard practice.",
+      B: "Complete it for free to avoid an awkward conversation about money.",
+      C: "Inform the patient before providing the service that there will be a £25 charge and obtain their agreement to proceed.",
+      D: "Charge whatever you think is fair, as private work is not regulated by the GMC."
     },
     correct_answer: "C",
-    rationale: "Excellent! Professional response to complaints demonstrates maturity and integrity. Seeking advice from your medical defense organization ensures you respond appropriately. The complaints process is an opportunity to learn and improve, even when you believe the complaint is unfounded."
+    rationale: "Correct! You must inform patients about charges before providing the service.\n\n**GMC Good Medical Practice 2024 - Domain 4** requires you to:\n1. **\"Be honest in financial matters\"**\n2. \"Make sure patients are informed about costs they may have to pay\"\n3. \"Get their agreement before providing treatment or services for which they will be charged\"\n\n**GMC Financial and Commercial Arrangements and Conflicts of Interest** states:\n- Patients must know about charges in advance\n- They must have opportunity to decline\n- Charges must be reasonable and justifiable\n- Financial interests must not influence clinical judgment\n\nEven for private services, GMC standards apply. Surprising patients with unexpected bills damages trust and breaches professional standards.\n\n**BMA Fees Guidance** provides recommended charges for private medical services.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 4; GMC Financial and Commercial Arrangements and Conflicts of Interest; BMA Private Practice Fees"
+  },
+  {
+    module: "Module 4: Professional Integration",
+    moduleNumber: 4,
+    scenario_title: "Research Consent and Vulnerability",
+    scenario_text: "You are recruiting patients for a clinical trial. A patient with learning disabilities and mild intellectual impairment expresses interest in participating. Their care home manager is eager for them to participate.",
+    question: "What is your primary consideration under research ethics and GMC guidance?",
+    options: {
+      A: "Obtain consent from the care home manager, as they have legal authority over the patient.",
+      B: "Assess the patient's capacity to consent to research participation specifically, provide accessible information, and ensure consent is voluntary and not influenced by the care home.",
+      C: "Exclude them from the research, as patients with learning disabilities cannot provide valid consent.",
+      D: "Include them based on the care home manager's enthusiasm, as they know the patient best."
+    },
+    correct_answer: "B",
+    rationale: "Correct! You must assess capacity specifically for research consent and ensure voluntary participation.\n\n**GMC Good Medical Practice 2024 - Domain 4** requires you to \"obtain informed consent from patients before undertaking research\" and \"follow the guidance in our research guidance.\"\n\n**GMC Good Practice in Research** states:\n1. Participants must have capacity to consent OR appropriate legal authority must be obtained\n2. Information must be provided in accessible formats\n3. Consent must be voluntary - free from coercion or undue influence\n4. Learning disabilities ≠ lack of capacity - many people with learning disabilities CAN consent\n\n**Mental Capacity Act 2005** requires capacity assessment for specific decisions. Care home managers do NOT have automatic legal authority over residents.\n\n**Research Ethics Committees** require special consideration for potentially vulnerable participants.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 4; GMC Good Practice in Research; Mental Capacity Act 2005; Health Research Authority - Consent and Participant Information Guidance"
+  },
+  {
+    module: "Module 4: Professional Integration",
+    moduleNumber: 4,
+    scenario_title: "Learning from Incidents",
+    scenario_text: "You are involved in a clinical incident where a patient experienced a delayed diagnosis due to a communication breakdown between teams. No serious harm occurred. Your colleague suggests \"Let's just move on and not dwell on it.\"",
+    question: "What is your professional obligation regarding learning from incidents under GMC and NHS frameworks?",
+    options: {
+      A: "Agree with your colleague - since no serious harm occurred, formal reporting would be excessive.",
+      B: "Report the incident through your trust's incident reporting system, participate in any investigation, and contribute to learning to prevent future occurrences.",
+      C: "Only report it if the patient complains.",
+      D: "Discuss it informally with colleagues but don't formally document it."
+    },
+    correct_answer: "B",
+    rationale: "Correct! You must report incidents and contribute to organizational learning.\n\n**GMC Good Medical Practice 2024 - Domain 4** requires you to:\n1. **\"Take part in reviews and investigations when asked\"**\n2. \"Help to address adverse events and near misses\"\n3. \"Support colleagues who raise concerns\"\n4. **\"Contribute to confidential inquiries and adverse event investigations\"**\n\n**NHS Patient Safety Strategy** (2019) emphasizes:\n- Learning culture, not blame culture\n- Near misses are valuable learning opportunities\n- Early reporting prevents serious incidents\n\n**Patient Safety Incident Response Framework (PSIRF)** replaced Serious Incident Framework in 2022, emphasizing learning from all incidents, not just those causing severe harm.\n\n**Duty of Candour** requires learning from incidents. Communication breakdowns are common root causes of serious events.\n\n**Reference:** GMC Good Medical Practice 2024, Domain 4; NHS Patient Safety Strategy (2019); Patient Safety Incident Response Framework (PSIRF, 2022); GMC Openness and Honesty When Things Go Wrong"
   }
 ];
 
+/**
+ * Helper function to get a scenario by module number and optional scenario index
+ * @param moduleNumber - The module number (1-4)
+ * @param scenarioIndex - Optional scenario index for variation
+ * @returns A scenario object
+ */
 export function getMockScenarioByModule(moduleNumber: number, scenarioIndex?: number): Scenario {
-  // Find all scenarios for this module
+  // Filter scenarios by module number
   const moduleScenarios = mockScenarios.filter(s => s.moduleNumber === moduleNumber);
   
   if (moduleScenarios.length === 0) {
+    // Fallback to first scenario if module not found
     return mockScenarios[0];
   }
   
-  // Use the scenario index to select which scenario to return
-  // This allows cycling through all scenarios for a module
-  const index = scenarioIndex !== undefined 
-    ? scenarioIndex % moduleScenarios.length 
-    : 0;
+  // If scenarioIndex provided, use it to select from the 10 scenarios in this module
+  if (scenarioIndex !== undefined && scenarioIndex >= 0) {
+    const index = scenarioIndex % moduleScenarios.length;
+    return moduleScenarios[index];
+  }
   
-  return moduleScenarios[index];
+  // Otherwise return the first scenario from this module
+  return moduleScenarios[0];
 }

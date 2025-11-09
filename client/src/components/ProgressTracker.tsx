@@ -8,6 +8,7 @@ interface ProgressTrackerProps {
     module: number;
     moduleName: string;
     completed: number;
+    correct: number;
     total: number;
   }[];
 }
@@ -49,14 +50,29 @@ export default function ProgressTracker({ totalCompleted, totalScenarios, module
             <Target className="w-4 h-4" />
             <span>Module Breakdown</span>
           </div>
-          {moduleProgress.map((module) => (
-            <div key={module.module} className="flex items-center justify-between text-sm gap-4">
-              <span className="text-muted-foreground flex-1">{module.moduleName}</span>
-              <span className="font-medium text-foreground whitespace-nowrap" data-testid={`text-module-${module.module}-progress`}>
-                {module.completed}/{module.total}
-              </span>
-            </div>
-          ))}
+          {moduleProgress.map((module) => {
+            const wrong = module.completed - module.correct;
+            return (
+              <div key={module.module} className="flex items-center justify-between text-sm gap-4">
+                <span className="text-muted-foreground flex-1">{module.moduleName}</span>
+                <div className="flex items-center gap-3 whitespace-nowrap" data-testid={`text-module-${module.module}-progress`}>
+                  <span className="font-medium text-foreground">
+                    {module.completed}/{module.total}
+                  </span>
+                  {module.completed > 0 && (
+                    <div className="flex items-center gap-2">
+                      <span className="text-green-600 font-medium" data-testid={`text-module-${module.module}-correct`}>
+                        {module.correct}
+                      </span>
+                      <span className="text-red-600 font-medium" data-testid={`text-module-${module.module}-wrong`}>
+                        {wrong}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </Card>

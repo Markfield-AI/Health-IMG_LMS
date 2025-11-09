@@ -76,17 +76,6 @@ export default function QuestionOptions({
           </div>
         </Card>
       ))}
-      
-      {!showFeedback && selectedAnswer && (
-        <Button 
-          className="w-full mt-6" 
-          size="lg"
-          onClick={() => console.log('Submit answer:', selectedAnswer)}
-          data-testid="button-submit-answer"
-        >
-          Submit Answer
-        </Button>
-      )}
     </div>
   );
 }
